@@ -2,62 +2,62 @@
    VAISHNAVI PORTFOLIO
    ELITE EDITION — OBSIDIAN / COBALT / LIQUID GLASS
    ========================================================== */
-
-
+ 
+ 
 /* ==========================================================
    01. DESIGN TOKENS
    ========================================================== */
-
+ 
 :root {
     --black: #030407;
     --obsidian: #070910;
     --dark: #0b0e18;
-
+ 
     --glass: rgba(255,255,255,0.045);
     --glass-strong: rgba(255,255,255,0.075);
     --glass-border: rgba(255,255,255,0.11);
-
+ 
     --white: #ffffff;
     --text: #e9ecf5;
     --muted: #9299aa;
-
+ 
     --cobalt: #2457ff;
     --cobalt-light: #6489ff;
     --cobalt-dark: #102c9c;
     --electric: #426cff;
-
+ 
     --heading: 'Space Grotesk', sans-serif;
     --body: 'DM Sans', sans-serif;
-
+ 
     --ease: cubic-bezier(.22, 1, .36, 1);
     --smooth: cubic-bezier(.16, 1, .3, 1);
-
+ 
     --radius-sm: 12px;
     --radius-md: 20px;
     --radius-lg: 28px;
     --radius-xl: 36px;
-
+ 
     --glass-shadow:
         0 20px 70px rgba(0,0,0,.35),
         inset 0 1px 0 rgba(255,255,255,.08);
 }
-
-
+ 
+ 
 /* ==========================================================
    02. RESET & GLOBAL
    ========================================================== */
-
+ 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
+ 
 html {
     scroll-behavior: auto;
     scroll-padding-top: 100px;
 }
-
+ 
 body {
     background: var(--black);
     color: var(--white);
@@ -65,14 +65,14 @@ body {
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
 }
-
+ 
 body::before {
     content: "";
     position: fixed;
     inset: 0;
     z-index: -1;
     pointer-events: none;
-
+ 
     background:
         radial-gradient(
             circle at 80% 10%,
@@ -85,39 +85,39 @@ body::before {
             transparent 35%
         );
 }
-
+ 
 a {
     text-decoration: none;
     color: inherit;
 }
-
+ 
 button {
     font: inherit;
 }
-
+ 
 img {
     max-width: 100%;
     display: block;
 }
-
+ 
 ::selection {
     background: var(--cobalt);
     color: white;
 }
-
-
+ 
+ 
 /* ==========================================================
    03. CUSTOM SCROLLBAR
    ========================================================== */
-
+ 
 ::-webkit-scrollbar {
     width: 7px;
 }
-
+ 
 ::-webkit-scrollbar-track {
     background: var(--black);
 }
-
+ 
 ::-webkit-scrollbar-thumb {
     background: linear-gradient(
         180deg,
@@ -126,48 +126,48 @@ img {
     );
     border-radius: 20px;
 }
-
-
+ 
+ 
 /* ==========================================================
    04. PRELOADER
    ========================================================== */
-
+ 
 .preloader {
     position: fixed;
     inset: 0;
     z-index: 10000;
-
+ 
     display: grid;
     place-items: center;
-
+ 
     background: var(--black);
 }
-
+ 
 .preloader > span {
     font-family: var(--heading);
     font-size: 85px;
     font-weight: 700;
     letter-spacing: -8px;
-
+ 
     animation: logoPulse 1.5s ease-in-out infinite;
 }
-
+ 
 .blue {
     color: var(--cobalt-light);
 }
-
+ 
 @keyframes logoPulse {
     50% {
         opacity: .45;
         transform: scale(.94);
     }
 }
-
-
+ 
+ 
 /* ==========================================================
    05. CURSOR
    ========================================================== */
-
+ 
 .cursor,
 .cursor-follower {
     position: fixed;
@@ -175,17 +175,17 @@ img {
     left: 0;
     pointer-events: none;
     z-index: 9999;
-
+ 
     border-radius: 50%;
     transform: translate(-50%, -50%);
 }
-
+ 
 .cursor {
     width: 7px;
     height: 7px;
     background: white;
 }
-
+ 
 .cursor-follower {
     width: 35px;
     height: 35px;
@@ -195,162 +195,162 @@ img {
         height .3s ease,
         background .3s ease;
 }
-
+ 
 .cursor-follower.hovered {
     width: 65px;
     height: 65px;
     background: rgba(36,87,255,.12);
     border-color: var(--cobalt-light);
 }
-
+ 
 @media (hover: none) {
     .cursor,
     .cursor-follower {
         display: none;
     }
 }
-
-
+ 
+ 
 /* ==========================================================
    06. SCROLL PROGRESS
    ========================================================== */
-
+ 
 .scroll-progress {
     position: fixed;
     top: 0;
     left: 0;
-
+ 
     width: 0%;
     height: 3px;
-
+ 
     z-index: 10001;
-
+ 
     background: linear-gradient(
         90deg,
         var(--cobalt-dark),
         var(--cobalt-light),
         white
     );
-
+ 
     box-shadow: 0 0 15px var(--cobalt);
 }
-
-
+ 
+ 
 /* ==========================================================
    07. GLASS NAVIGATION
    ========================================================== */
-
+ 
 .site-nav {
     position: fixed;
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
-
+ 
     width: min(1160px, calc(100% - 70px));
     height: 75px;
-
+ 
     z-index: 1000;
-
+ 
     display: flex;
     align-items: center;
     justify-content: space-between;
-
+ 
     padding: 0 30px;
-
+ 
     background: rgba(12,15,25,.68);
     backdrop-filter: blur(25px) saturate(160%);
     -webkit-backdrop-filter: blur(25px) saturate(160%);
-
+ 
     border: 1px solid var(--glass-border);
     border-radius: 22px;
-
+ 
     box-shadow:
         0 15px 45px rgba(0,0,0,.3),
         inset 0 1px 0 rgba(255,255,255,.08);
-
+ 
     transition:
         top .5s var(--ease),
         width .5s var(--ease),
         background .5s ease;
 }
-
+ 
 .site-nav.scrolled {
     top: 10px;
     width: min(1050px, calc(100% - 40px));
     background: rgba(5,7,14,.88);
 }
-
+ 
 .logo {
     font-family: var(--heading);
     font-size: 34px;
     font-weight: 700;
     letter-spacing: -3px;
 }
-
+ 
 .logo span {
     color: var(--cobalt-light);
 }
-
+ 
 .nav-center {
     display: flex;
     align-items: center;
     gap: 32px;
 }
-
+ 
 .nav-center a {
     color: #aab0c0;
     font-size: 12px;
     transition: color .3s ease;
     position: relative;
 }
-
+ 
 .nav-center a:hover,
 .nav-center a.active {
     color: white;
 }
-
+ 
 .nav-center a::after {
     content: "";
     position: absolute;
     bottom: -8px;
     left: 0;
-
+ 
     width: 0;
     height: 2px;
-
+ 
     background: var(--cobalt-light);
     transition: width .35s var(--ease);
 }
-
+ 
 .nav-center a:hover::after,
 .nav-center a.active::after {
     width: 100%;
 }
-
+ 
 .nav-contact {
     display: flex;
     align-items: center;
     gap: 12px;
-
+ 
     padding: 12px 19px;
-
+ 
     color: white;
     font-size: 12px;
-
+ 
     border: 1px solid rgba(100,137,255,.5);
     border-radius: 12px;
-
+ 
     background: rgba(36,87,255,.12);
-
+ 
     transition: all .4s var(--ease);
 }
-
+ 
 .nav-contact:hover {
     background: var(--cobalt);
     box-shadow: 0 0 30px rgba(36,87,255,.4);
     transform: translateY(-2px);
 }
-
+ 
 .mobile-menu {
     display: none;
     border: 0;
@@ -359,25 +359,25 @@ img {
     font-size: 27px;
     cursor: pointer;
 }
-
-
+ 
+ 
 /* ==========================================================
    08. HERO SECTION
    ========================================================== */
-
+ 
 .hero {
     min-height: 100vh;
     min-height: 100svh;
-
+ 
     padding: 150px 8% 45px;
-
+ 
     position: relative;
     overflow: hidden;
-
+ 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
+ 
     background:
         radial-gradient(
             ellipse at 80% 45%,
@@ -386,374 +386,374 @@ img {
         ),
         var(--black);
 }
-
+ 
 .hero-noise {
     position: absolute;
     inset: 0;
     opacity: .12;
     pointer-events: none;
-
+ 
     background-image: url(
         "data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.25'/%3E%3C/svg%3E"
     );
 }
-
+ 
 .hero-topline,
 .hero-bottomline,
 .section-topline {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
+ 
     color: var(--muted);
     font-size: 9px;
     letter-spacing: 2.5px;
 }
-
+ 
 .hero-topline {
     position: relative;
     z-index: 2;
 }
-
+ 
 .hero-layout {
     width: 100%;
     max-width: 1450px;
     margin: auto;
-
+ 
     display: grid;
     grid-template-columns: 1.15fr .85fr;
     align-items: center;
     gap: 70px;
-
+ 
     position: relative;
     z-index: 2;
 }
-
+ 
 .hero-copy {
     padding: 40px 0;
 }
-
+ 
 .availability {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-
+ 
     padding: 11px 16px;
-
+ 
     border-radius: 30px;
     border: 1px solid var(--glass-border);
-
+ 
     background: var(--glass);
     backdrop-filter: blur(15px);
-
+ 
     font-size: 9px;
     letter-spacing: 2px;
     color: #c5cada;
-
+ 
     margin-bottom: 35px;
 }
-
+ 
 .availability > span {
     width: 7px;
     height: 7px;
     background: #43dda0;
     border-radius: 50%;
-
+ 
     box-shadow: 0 0 15px #43dda0;
-
+ 
     animation: statusGlow 2s infinite;
 }
-
+ 
 @keyframes statusGlow {
     50% {
         opacity: .4;
         box-shadow: 0 0 3px #43dda0;
     }
 }
-
+ 
 .hero-intro {
     color: var(--muted);
     font-size: 19px;
     margin-bottom: 10px;
 }
-
+ 
 .hero-name {
     font-family: var(--heading);
     font-size: clamp(65px, 8.5vw, 125px);
-
+ 
     line-height: .95;
     letter-spacing: -8px;
     font-weight: 700;
-
+ 
     white-space: nowrap;
 }
-
+ 
 .hero-name .blue {
     color: var(--cobalt-light);
 }
-
+ 
 .hero-role {
     display: flex;
     align-items: center;
     gap: 13px;
-
+ 
     margin-top: 27px;
-
+ 
     font-size: clamp(15px, 1.5vw, 20px);
     font-weight: 500;
 }
-
+ 
 .role-slash {
     color: var(--cobalt-light);
 }
-
+ 
 .hero-description {
     max-width: 510px;
-
+ 
     color: var(--muted);
     font-size: 14px;
     line-height: 1.9;
-
+ 
     margin-top: 24px;
 }
-
+ 
 .hero-actions {
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
     margin-top: 35px;
 }
-
+ 
 .primary-button,
 .secondary-button {
     min-height: 54px;
-
+ 
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 13px;
-
+ 
     padding: 0 23px;
-
+ 
     border-radius: 14px;
     font-size: 12px;
     font-weight: 600;
-
+ 
     transition: all .45s var(--ease);
 }
-
+ 
 .primary-button {
     background: linear-gradient(
         135deg,
         #3265ff,
         #1740c7
     );
-
+ 
     color: white;
-
+ 
     box-shadow:
         0 8px 30px rgba(36,87,255,.25),
         inset 0 1px 0 rgba(255,255,255,.25);
 }
-
+ 
 .primary-button:hover {
     transform: translateY(-5px);
     color: white;
-
+ 
     box-shadow:
         0 15px 40px rgba(36,87,255,.45);
 }
-
+ 
 .secondary-button {
     color: white;
     border: 1px solid var(--glass-border);
     background: var(--glass);
     backdrop-filter: blur(15px);
 }
-
+ 
 .secondary-button:hover {
     border-color: var(--cobalt-light);
     background: rgba(36,87,255,.13);
     transform: translateY(-5px);
     color: white;
 }
-
+ 
 .hero-socials {
     display: flex;
     gap: 12px;
     margin-top: 38px;
 }
-
+ 
 .hero-socials a {
     width: 43px;
     height: 43px;
-
+ 
     display: grid;
     place-items: center;
-
+ 
     border-radius: 50%;
     border: 1px solid var(--glass-border);
-
+ 
     background: var(--glass);
     backdrop-filter: blur(10px);
-
+ 
     color: #c4cad9;
-
+ 
     transition: all .4s var(--ease);
 }
-
+ 
 .hero-socials a:hover {
     background: var(--cobalt);
     border-color: var(--cobalt);
     color: white;
     transform: translateY(-6px);
 }
-
-
+ 
+ 
 /* ==========================================================
    09. HERO PORTRAIT
    ========================================================== */
-
+ 
 .hero-portrait {
     position: relative;
-
+ 
     width: 100%;
     max-width: 470px;
-
+ 
     margin-left: auto;
     padding: 20px;
 }
-
+ 
 .portrait-frame {
     position: relative;
     height: 570px;
-
+ 
     padding: 10px;
-
+ 
     border-radius: 30px;
     overflow: hidden;
-
+ 
     background:
         linear-gradient(
             145deg,
             rgba(255,255,255,.14),
             rgba(255,255,255,.015)
         );
-
+ 
     border: 1px solid rgba(255,255,255,.13);
-
+ 
     box-shadow:
         0 30px 100px rgba(0,0,0,.5),
         inset 0 1px 0 rgba(255,255,255,.15);
 }
-
+ 
 .portrait-image {
     width: 100%;
     height: 100%;
-
+ 
     object-fit: cover;
     object-position: center top;
-
+ 
     border-radius: 23px;
-
+ 
     filter: saturate(.85);
-
+ 
     transition:
         transform 1s var(--ease),
         filter .8s ease;
 }
-
+ 
 .portrait-frame:hover .portrait-image {
     transform: scale(1.045);
     filter: saturate(1);
 }
-
+ 
 .portrait-number {
     position: absolute;
     z-index: 3;
     top: 25px;
     left: 27px;
-
+ 
     width: 43px;
     height: 43px;
-
+ 
     display: grid;
     place-items: center;
-
+ 
     background: rgba(5,7,14,.65);
     backdrop-filter: blur(15px);
-
+ 
     border: 1px solid var(--glass-border);
     border-radius: 12px;
-
+ 
     font-size: 12px;
 }
-
+ 
 .portrait-bottom {
     position: absolute;
     z-index: 3;
-
+ 
     bottom: 25px;
     left: 25px;
     right: 25px;
-
+ 
     display: flex;
     justify-content: space-between;
-
+ 
     padding: 15px;
-
+ 
     border-radius: 13px;
     background: rgba(5,7,14,.55);
     backdrop-filter: blur(20px);
-
+ 
     border: 1px solid rgba(255,255,255,.12);
-
+ 
     font-size: 8px;
     letter-spacing: 2px;
 }
-
+ 
 .portrait-decoration {
     position: absolute;
     inset: 0;
-
+ 
     z-index: -1;
-
+ 
     border: 1px solid rgba(71,111,255,.55);
     border-radius: 30px;
-
+ 
     transform: rotate(5deg);
-
+ 
     transition: transform .7s var(--ease);
 }
-
+ 
 .hero-portrait:hover .portrait-decoration {
     transform: rotate(1deg);
 }
-
+ 
 .floating-caption {
     position: absolute;
-
+ 
     right: -45px;
     bottom: 110px;
-
+ 
     display: flex;
     align-items: center;
     gap: 10px;
-
+ 
     padding: 14px 20px;
-
+ 
     background: rgba(15,19,33,.85);
     backdrop-filter: blur(20px);
-
+ 
     border: 1px solid var(--glass-border);
     border-radius: 14px;
-
+ 
     font-size: 9px;
     letter-spacing: 1.5px;
-
+ 
     box-shadow: var(--glass-shadow);
 }
-
+ 
 .caption-dot {
     width: 7px;
     height: 7px;
@@ -761,57 +761,57 @@ img {
     background: var(--cobalt-light);
     box-shadow: 0 0 15px var(--cobalt-light);
 }
-
+ 
 .hero-bottomline {
     position: relative;
     z-index: 2;
 }
-
+ 
 .scroll-arrow {
     width: 35px;
     height: 35px;
-
+ 
     display: grid;
     place-items: center;
-
+ 
     border: 1px solid var(--glass-border);
     border-radius: 50%;
-
+ 
     color: var(--cobalt-light);
-
+ 
     animation: arrowFloat 2s ease-in-out infinite;
 }
-
+ 
 @keyframes arrowFloat {
     50% {
         transform: translateY(7px);
     }
 }
-
-
+ 
+ 
 /* ==========================================================
    10. SECTION SYSTEM
    ========================================================== */
-
+ 
 .section {
     padding: 145px 8%;
     position: relative;
 }
-
+ 
 .section-topline {
     padding-bottom: 23px;
     border-bottom: 1px solid rgba(255,255,255,.1);
 }
-
+ 
 .section-topline span:first-child {
     color: var(--cobalt-light);
 }
-
-
+ 
+ 
 /* ==========================================================
    11. ABOUT
    ========================================================== */
-
+ 
 .about {
     background:
         radial-gradient(
@@ -821,90 +821,90 @@ img {
         ),
         var(--obsidian);
 }
-
+ 
 .about-content {
     padding-top: 90px;
     max-width: 1200px;
 }
-
+ 
 .about-heading {
     font-family: var(--heading);
     font-size: clamp(45px, 7.5vw, 105px);
-
+ 
     line-height: 1.12;
     letter-spacing: -6px;
-
+ 
     font-weight: 600;
 }
-
+ 
 .about-heading span {
     display: block;
     color: var(--cobalt-light);
 }
-
+ 
 .about-bottom {
     max-width: 780px;
     margin: 55px 0 0 auto;
 }
-
+ 
 .about-bottom p {
     color: #aab1c2;
     font-size: 17px;
     line-height: 2;
 }
-
+ 
 .text-link {
     display: inline-flex;
     align-items: center;
     gap: 15px;
-
+ 
     margin-top: 25px;
-
+ 
     color: white;
     font-size: 12px;
-
+ 
     padding-bottom: 8px;
     border-bottom: 1px solid var(--cobalt-light);
-
+ 
     transition: gap .4s var(--ease);
 }
-
+ 
 .text-link:hover {
     color: var(--cobalt-light);
     gap: 25px;
 }
-
-
+ 
+ 
 /* ==========================================================
    12. EXPERTISE HEADING
    ========================================================== */
-
+ 
 .expertise {
     background: var(--black);
     overflow: hidden;
 }
-
+ 
 .expertise-heading {
     display: flex;
     align-items: end;
     justify-content: space-between;
     gap: 40px;
-
+ 
     margin: 75px 0 65px;
 }
-
+ 
 .expertise-heading h2,
 .projects-heading h2,
 .journey-heading,
 .certification-heading {
     font-family: var(--heading);
     font-size: clamp(45px, 6vw, 85px);
-
+ 
     font-weight: 600;
     letter-spacing: -5px;
     line-height: 1.08;
 }
-
+ 
 .expertise-heading h2 span,
 .projects-heading h2 span,
 .journey-heading span,
@@ -912,40 +912,40 @@ img {
     display: block;
     color: var(--cobalt-light);
 }
-
+ 
 .expertise-heading p,
 .projects-heading p {
     max-width: 330px;
-
+ 
     color: var(--muted);
     font-size: 13px;
     line-height: 1.9;
     margin-bottom: 8px;
 }
-
-
+ 
+ 
 /* ==========================================================
    13. INTERACTIVE GLASS DOORS
    ========================================================== */
-
+ 
 .door-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-
+ 
     perspective: 1500px;
 }
-
+ 
 .door {
     height: 380px;
     position: relative;
-
+ 
     overflow: hidden;
-
+ 
     border-radius: 180px 180px 25px 25px;
-
+ 
     border: 1px solid rgba(255,255,255,.13);
-
+ 
     background:
         radial-gradient(
             ellipse at 50% 20%,
@@ -957,607 +957,607 @@ img {
             #171d32,
             #090c16
         );
-
+ 
     box-shadow:
         inset 0 1px 0 rgba(255,255,255,.1),
         0 20px 60px rgba(0,0,0,.3);
-
+ 
     transform-style: preserve-3d;
-
+ 
     transition:
         transform .8s var(--ease),
         border-color .5s ease,
         box-shadow .5s ease;
 }
-
+ 
 .door::before {
     content: "";
-
+ 
     position: absolute;
     inset: 12px;
-
+ 
     border: 1px solid rgba(255,255,255,.1);
-
+ 
     border-radius: 170px 170px 17px 17px;
-
+ 
     pointer-events: none;
 }
-
+ 
 .door::after {
     content: "";
-
+ 
     position: absolute;
     width: 200%;
     height: 150%;
-
+ 
     top: -30%;
     left: -150%;
-
+ 
     transform: rotate(25deg);
-
+ 
     background: linear-gradient(
         90deg,
         transparent,
         rgba(255,255,255,.12),
         transparent
     );
-
+ 
     transition: left 1s var(--ease);
 }
-
+ 
 .door:hover {
     transform: translateY(-15px) rotateX(3deg);
     border-color: var(--cobalt-light);
-
+ 
     box-shadow:
         0 30px 70px rgba(36,87,255,.2),
         inset 0 1px 0 rgba(255,255,255,.15);
 }
-
+ 
 .door:hover::after {
     left: 120%;
 }
-
+ 
 .door-content {
     height: 100%;
-
+ 
     position: relative;
     z-index: 2;
-
+ 
     padding: 40px 28px 30px;
-
+ 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
+ 
     text-align: center;
-
+ 
     transition: transform .7s var(--ease);
 }
-
+ 
 .door:hover .door-content {
     transform: translateY(-5px);
 }
-
+ 
 .door-number {
     position: absolute;
     top: 35px;
     left: 50%;
-
+ 
     transform: translateX(-50%);
-
+ 
     font-size: 10px;
     letter-spacing: 3px;
     color: #929bb7;
 }
-
+ 
 .door-content > i {
     font-size: 50px;
     color: var(--cobalt-light);
-
+ 
     margin-bottom: 35px;
-
+ 
     filter: drop-shadow(0 0 20px rgba(36,87,255,.4));
-
+ 
     transition:
         transform .6s var(--ease),
         filter .6s ease;
 }
-
+ 
 .door:hover .door-content > i {
     transform: scale(1.18) translateY(-8px);
     filter: drop-shadow(0 0 30px var(--cobalt));
 }
-
+ 
 .door h3 {
     font-family: var(--heading);
     font-size: 22px;
 }
-
+ 
 .door p {
     color: #9ca5bc;
     font-size: 11px;
     line-height: 1.8;
     margin-top: 12px;
 }
-
+ 
 .door-open {
     display: flex;
     align-items: center;
     gap: 10px;
-
+ 
     margin-top: 30px;
-
+ 
     color: var(--cobalt-light);
     font-size: 9px;
     letter-spacing: 2px;
-
+ 
     opacity: .7;
     transition: all .4s ease;
 }
-
+ 
 .door:hover .door-open {
     opacity: 1;
     gap: 17px;
 }
-
-
+ 
+ 
 /* ==========================================================
    14. PROJECTS
    ========================================================== */
-
+ 
 .projects {
     background: var(--obsidian);
 }
-
+ 
 .projects-heading {
     display: flex;
     justify-content: space-between;
     align-items: end;
     gap: 40px;
-
+ 
     margin: 80px 0;
 }
-
+ 
 .project-showcase {
     display: grid;
     grid-template-columns: 1.15fr .85fr;
-
+ 
     align-items: center;
     gap: 80px;
-
+ 
     margin-bottom: 125px;
 }
-
+ 
 .project-showcase.reverse {
     grid-template-columns: .85fr 1.15fr;
 }
-
+ 
 .project-showcase.reverse .project-visual {
     order: 2;
 }
-
+ 
 .project-showcase.reverse .project-details {
     order: 1;
 }
-
+ 
 .project-visual {
     height: 480px;
-
+ 
     position: relative;
     overflow: hidden;
-
+ 
     display: grid;
     place-items: center;
-
+ 
     border: 1px solid rgba(255,255,255,.12);
     border-radius: 30px;
-
+ 
     box-shadow:
         0 35px 80px rgba(0,0,0,.4),
         inset 0 1px 0 rgba(255,255,255,.1);
-
+ 
     transition:
         transform .8s var(--ease),
         border-color .5s ease;
 }
-
+ 
 .project-visual:hover {
     transform: translateY(-10px);
     border-color: rgba(100,137,255,.5);
 }
-
+ 
 .visual-one {
     background:
         radial-gradient(circle at 50% 50%, #244cbb, transparent 55%),
         linear-gradient(135deg, #131d3e, #080b17);
 }
-
+ 
 .visual-two {
     background:
         radial-gradient(circle at 50% 50%, #3157a4, transparent 55%),
         linear-gradient(135deg, #111c35, #080b15);
 }
-
+ 
 .visual-three {
     background:
         radial-gradient(circle at 50% 50%, #1d4ca3, transparent 55%),
         linear-gradient(135deg, #111a31, #080b15);
 }
-
+ 
 .project-visual::before {
     content: "";
-
+ 
     position: absolute;
-
+ 
     width: 350px;
     height: 350px;
-
+ 
     border: 1px solid rgba(255,255,255,.16);
     border-radius: 50%;
-
+ 
     transition: transform 1s var(--ease);
 }
-
+ 
 .project-visual::after {
     content: "";
-
+ 
     position: absolute;
-
+ 
     width: 450px;
     height: 450px;
-
+ 
     border: 1px solid rgba(255,255,255,.07);
     border-radius: 50%;
-
+ 
     transition: transform 1s var(--ease);
 }
-
+ 
 .project-visual:hover::before {
     transform: scale(1.25);
 }
-
+ 
 .project-visual:hover::after {
     transform: scale(.8);
 }
-
+ 
 .project-index,
 .visual-caption {
     position: absolute;
     z-index: 2;
-
+ 
     font-size: 9px;
     letter-spacing: 2px;
     color: rgba(255,255,255,.65);
 }
-
+ 
 .project-index {
     top: 28px;
     left: 30px;
 }
-
+ 
 .visual-caption {
     bottom: 28px;
     left: 30px;
 }
-
+ 
 .project-graphic {
     position: relative;
     z-index: 2;
-
+ 
     width: 160px;
     height: 160px;
-
+ 
     display: grid;
     place-items: center;
-
+ 
     border-radius: 40px;
-
+ 
     background: rgba(255,255,255,.07);
     backdrop-filter: blur(25px);
-
+ 
     border: 1px solid rgba(255,255,255,.2);
-
+ 
     box-shadow:
         0 25px 60px rgba(0,0,0,.3),
         inset 0 1px 0 rgba(255,255,255,.2);
-
+ 
     transition: transform .8s var(--ease);
 }
-
+ 
 .project-visual:hover .project-graphic {
     transform: rotate(-8deg) scale(1.1);
 }
-
+ 
 .project-graphic i {
     font-size: 65px;
     color: white;
     filter: drop-shadow(0 0 20px rgba(100,137,255,.5));
 }
-
+ 
 .project-details {
     padding: 20px 0;
 }
-
+ 
 .project-category {
     font-size: 9px;
     letter-spacing: 2.5px;
     color: var(--cobalt-light);
 }
-
+ 
 .project-details h3 {
     font-family: var(--heading);
     font-size: clamp(32px, 4vw, 55px);
-
+ 
     letter-spacing: -2px;
     margin: 25px 0;
 }
-
+ 
 .project-details > p {
     color: var(--muted);
     font-size: 14px;
     line-height: 2;
     max-width: 450px;
 }
-
+ 
 .project-tech {
     display: flex;
     flex-wrap: wrap;
     gap: 9px;
     margin-top: 28px;
 }
-
+ 
 .project-tech span {
     padding: 9px 14px;
-
+ 
     font-size: 10px;
     color: #c1ceff;
-
+ 
     border: 1px solid rgba(100,137,255,.23);
     border-radius: 30px;
-
+ 
     background: rgba(36,87,255,.09);
     backdrop-filter: blur(10px);
 }
-
+ 
 .project-links {
     display: flex;
     gap: 30px;
     margin-top: 40px;
 }
-
+ 
 .project-links a {
     display: inline-flex;
     align-items: center;
     gap: 9px;
-
+ 
     color: white;
     font-size: 12px;
-
+ 
     transition: color .3s ease;
 }
-
+ 
 .project-links a:hover {
     color: var(--cobalt-light);
 }
-
-
+ 
+ 
 /* ==========================================================
    15. JOURNEY / TIMELINE
    ========================================================== */
-
+ 
 .journey {
     background: var(--black);
 }
-
+ 
 .journey-heading {
     margin: 85px 0;
 }
-
+ 
 .timeline {
     max-width: 1000px;
     margin-left: auto;
-
+ 
     position: relative;
     padding: 15px 0;
 }
-
+ 
 .timeline::before {
     content: "";
-
+ 
     position: absolute;
-
+ 
     left: 180px;
     top: 0;
     bottom: 0;
-
+ 
     width: 1px;
-
+ 
     background: rgba(255,255,255,.13);
 }
-
+ 
 .timeline-item {
     display: grid;
     grid-template-columns: 150px 60px 1fr;
-
+ 
     align-items: start;
-
+ 
     position: relative;
-
+ 
     padding-bottom: 75px;
 }
-
+ 
 .timeline-year {
     padding-top: 8px;
-
+ 
     font-size: 12px;
     color: var(--cobalt-light);
 }
-
+ 
 .timeline-marker {
     width: 13px;
     height: 13px;
-
+ 
     margin: 7px auto 0;
-
+ 
     border-radius: 50%;
-
+ 
     background: var(--cobalt-light);
     box-shadow:
         0 0 0 7px rgba(36,87,255,.1),
         0 0 25px rgba(36,87,255,.5);
-
+ 
     position: relative;
     z-index: 2;
 }
-
+ 
 .timeline-content {
     padding: 30px;
-
+ 
     border: 1px solid var(--glass-border);
     border-radius: 20px;
-
+ 
     background: var(--glass);
     backdrop-filter: blur(20px);
-
+ 
     box-shadow: var(--glass-shadow);
-
+ 
     transition: all .5s var(--ease);
 }
-
+ 
 .timeline-content:hover {
     transform: translateX(12px);
     border-color: var(--cobalt-light);
     background: rgba(36,87,255,.08);
 }
-
+ 
 .timeline-content > span {
     color: var(--cobalt-light);
     font-size: 9px;
     letter-spacing: 2px;
 }
-
+ 
 .timeline-content h3 {
     font-family: var(--heading);
     font-size: 23px;
     margin-top: 15px;
 }
-
+ 
 .timeline-content p {
     color: var(--muted);
     font-size: 13px;
     margin-top: 10px;
 }
-
-
+ 
+ 
 /* ==========================================================
    16. CERTIFICATIONS
    ========================================================== */
-
+ 
 .certifications {
     background: var(--obsidian);
 }
-
+ 
 .certification-heading {
     margin: 80px 0;
 }
-
+ 
 .certificate-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 18px;
 }
-
+ 
 .certificate {
     position: relative;
-
+ 
     padding: 35px;
-
+ 
     min-height: 200px;
-
+ 
     overflow: hidden;
-
+ 
     border: 1px solid var(--glass-border);
     border-radius: 22px;
-
+ 
     background:
         linear-gradient(
             145deg,
             rgba(255,255,255,.07),
             rgba(255,255,255,.015)
         );
-
+ 
     backdrop-filter: blur(25px);
-
+ 
     box-shadow: var(--glass-shadow);
-
+ 
     transition: all .6s var(--ease);
 }
-
+ 
 .certificate::before {
     content: "";
-
+ 
     position: absolute;
-
+ 
     right: -70px;
     bottom: -100px;
-
+ 
     width: 200px;
     height: 200px;
-
+ 
     border-radius: 50%;
-
+ 
     background: var(--cobalt);
     filter: blur(100px);
     opacity: 0;
-
+ 
     transition: opacity .5s ease;
 }
-
+ 
 .certificate:hover {
     transform: translateY(-10px) scale(1.015);
     border-color: rgba(100,137,255,.5);
 }
-
+ 
 .certificate:hover::before {
     opacity: .3;
 }
-
+ 
 .certificate > i {
     font-size: 28px;
     color: var(--cobalt-light);
 }
-
+ 
 .certificate h3 {
     position: relative;
     font-family: var(--heading);
     font-size: 20px;
     margin-top: 28px;
 }
-
+ 
 .certificate p {
     position: relative;
     color: var(--muted);
     font-size: 12px;
     margin-top: 10px;
 }
-
-
+ 
+ 
 /* ==========================================================
    17. CONTACT
    ========================================================== */
-
+ 
 .contact {
     min-height: 85vh;
-
+ 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+ 
     text-align: center;
-
+ 
     background:
         radial-gradient(
             ellipse at 50% 70%,
@@ -1566,124 +1566,124 @@ img {
         ),
         var(--black);
 }
-
+ 
 .contact .section-topline {
     width: 100%;
 }
-
+ 
 .contact-overline {
     color: var(--muted);
     font-size: 10px;
     letter-spacing: 4px;
     margin-top: 100px;
 }
-
+ 
 .contact h2 {
     font-family: var(--heading);
-
+ 
     font-size: clamp(65px, 10vw, 145px);
-
+ 
     font-weight: 700;
     letter-spacing: -9px;
     line-height: .95;
-
+ 
     margin: 35px 0 50px;
 }
-
+ 
 .contact h2 span {
     color: var(--cobalt-light);
 }
-
+ 
 .contact-button {
     min-width: 210px;
     min-height: 62px;
-
+ 
     display: inline-flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
-
+ 
     background: linear-gradient(
         135deg,
         #376aff,
         #1639ba
     );
-
+ 
     color: white;
-
+ 
     border-radius: 16px;
-
+ 
     font-size: 13px;
-
+ 
     box-shadow:
         0 15px 40px rgba(36,87,255,.3),
         inset 0 1px 0 rgba(255,255,255,.25);
-
+ 
     transition: all .5s var(--ease);
 }
-
+ 
 .contact-button:hover {
     color: white;
     transform: translateY(-7px) scale(1.04);
     box-shadow: 0 25px 55px rgba(36,87,255,.4);
 }
-
+ 
 .contact-bottom {
     display: flex;
     gap: 35px;
     margin-top: 100px;
 }
-
+ 
 .contact-bottom a {
     color: var(--muted);
     font-size: 12px;
     transition: color .3s ease;
 }
-
+ 
 .contact-bottom a:hover {
     color: var(--cobalt-light);
 }
-
-
+ 
+ 
 /* ==========================================================
    18. FOOTER
    ========================================================== */
-
+ 
 .footer {
     min-height: 100px;
-
+ 
     padding: 30px 8%;
-
+ 
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 20px;
-
+ 
     background: var(--black);
-
+ 
     border-top: 1px solid rgba(255,255,255,.08);
 }
-
+ 
 .footer > span:first-child {
     font-family: var(--heading);
     font-size: 23px;
     font-weight: 700;
 }
-
+ 
 .footer p,
 .footer > span:last-child {
     color: var(--muted);
     font-size: 11px;
     margin: 0;
 }
-
-
+ 
+ 
 /* ==========================================================
    19. HOVER STATES
    ========================================================== */
-
+ 
 @media (hover: hover) {
-
+ 
     a,
     button,
     .door,
@@ -1691,170 +1691,170 @@ img {
     .project-visual {
         cursor: pointer;
     }
-
+ 
 }
-
-
+ 
+ 
 /* ==========================================================
    20. TABLET
    ========================================================== */
-
+ 
 @media (max-width: 1100px) {
-
+ 
     .hero {
         padding-left: 5%;
         padding-right: 5%;
     }
-
+ 
     .hero-layout {
         gap: 35px;
     }
-
+ 
     .hero-name {
         font-size: clamp(60px, 8vw, 90px);
         letter-spacing: -5px;
     }
-
+ 
     .hero-portrait {
         max-width: 390px;
     }
-
+ 
     .portrait-frame {
         height: 490px;
     }
-
+ 
     .door-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-
+ 
     .project-showcase,
     .project-showcase.reverse {
         gap: 45px;
     }
-
+ 
 }
-
-
+ 
+ 
 /* ==========================================================
    21. MOBILE NAVIGATION
    ========================================================== */
-
+ 
 @media (max-width: 768px) {
-
+ 
     .site-nav {
         top: 12px;
         width: calc(100% - 28px);
         height: 65px;
         padding: 0 20px;
     }
-
+ 
     .mobile-menu {
         display: block;
     }
-
+ 
     .nav-center,
     .nav-contact {
         display: none;
     }
-
+ 
     .site-nav.menu-open {
         border-radius: 20px 20px 10px 10px;
     }
-
+ 
     .site-nav.menu-open .nav-center {
         position: absolute;
         top: 64px;
         left: -1px;
         right: -1px;
-
+ 
         display: flex;
         flex-direction: column;
         align-items: stretch;
         gap: 0;
-
+ 
         padding: 12px 20px 22px;
-
+ 
         background: rgba(8,11,20,.96);
         backdrop-filter: blur(25px);
-
+ 
         border: 1px solid var(--glass-border);
         border-top: 0;
         border-radius: 0 0 20px 20px;
     }
-
+ 
     .nav-center a {
         padding: 14px 0;
         border-bottom: 1px solid rgba(255,255,255,.07);
     }
-
+ 
     .nav-center a::after {
         display: none;
     }
-
+ 
     .hero {
         padding: 115px 6% 30px;
     }
-
+ 
     .hero-topline span:last-child {
         display: none;
     }
-
+ 
     .hero-layout {
         grid-template-columns: 1fr;
         gap: 40px;
     }
-
+ 
     .hero-copy {
         padding-top: 55px;
         text-align: center;
     }
-
+ 
     .hero-name {
         font-size: clamp(55px, 11vw, 85px);
         white-space: normal;
         letter-spacing: -4px;
     }
-
+ 
     .hero-role {
         justify-content: center;
         flex-wrap: wrap;
     }
-
+ 
     .hero-description {
         margin-left: auto;
         margin-right: auto;
     }
-
+ 
     .hero-actions,
     .hero-socials {
         justify-content: center;
     }
-
+ 
     .hero-portrait {
         margin: 10px auto 65px;
         max-width: 360px;
     }
-
+ 
     .portrait-frame {
         height: 450px;
     }
-
+ 
     .floating-caption {
         right: -5px;
     }
-
+ 
     .hero-bottomline span:nth-child(3) {
         display: none;
     }
-
+ 
     .section {
         padding: 95px 6%;
     }
-
+ 
     .about-content {
         padding-top: 60px;
     }
-
+ 
     .about-heading,
     .expertise-heading h2,
     .projects-heading h2,
@@ -1862,164 +1862,164 @@ img {
     .certification-heading {
         letter-spacing: -3px;
     }
-
+ 
     .expertise-heading,
     .projects-heading {
         flex-direction: column;
         align-items: flex-start;
     }
-
+ 
     .door-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 13px;
     }
-
+ 
     .door {
         height: 320px;
     }
-
+ 
     .door-content {
         padding: 30px 14px;
     }
-
+ 
     .door h3 {
         font-size: 18px;
     }
-
+ 
     .project-showcase,
     .project-showcase.reverse {
         grid-template-columns: 1fr;
         gap: 35px;
         margin-bottom: 85px;
     }
-
+ 
     .project-showcase.reverse .project-visual,
     .project-showcase.reverse .project-details {
         order: initial;
     }
-
+ 
     .project-visual {
         height: 350px;
     }
-
+ 
     .timeline::before {
         left: 7px;
     }
-
+ 
     .timeline-item {
         grid-template-columns: 25px 1fr;
         gap: 15px;
         padding-bottom: 35px;
     }
-
+ 
     .timeline-year {
         grid-column: 2;
         grid-row: 1;
     }
-
+ 
     .timeline-marker {
         grid-column: 1;
         grid-row: 1 / span 2;
     }
-
+ 
     .timeline-content {
         grid-column: 2;
         grid-row: 2;
     }
-
+ 
     .certificate-grid {
         grid-template-columns: 1fr;
     }
-
+ 
     .contact h2 {
         font-size: clamp(65px, 13vw, 95px);
         letter-spacing: -5px;
     }
-
+ 
     .footer {
         flex-direction: column;
         text-align: center;
         justify-content: center;
     }
-
+ 
 }
-
-
+ 
+ 
 /* ==========================================================
    22. SMALL MOBILE
    ========================================================== */
-
+ 
 @media (max-width: 420px) {
-
+ 
     .hero-name {
         font-size: 53px;
     }
-
+ 
     .hero-role {
         font-size: 13px;
     }
-
+ 
     .hero-description {
         font-size: 13px;
     }
-
+ 
     .hero-actions {
         flex-direction: column;
     }
-
+ 
     .hero-actions a {
         width: 100%;
     }
-
+ 
     .portrait-frame {
         height: 390px;
     }
-
+ 
     .door {
         height: 280px;
         border-radius: 130px 130px 20px 20px;
     }
-
+ 
     .door-content > i {
         font-size: 35px;
         margin-bottom: 22px;
     }
-
+ 
     .door h3 {
         font-size: 16px;
     }
-
+ 
     .door p {
         font-size: 9px;
     }
-
+ 
     .project-visual {
         height: 280px;
     }
-
+ 
     .project-graphic {
         width: 125px;
         height: 125px;
     }
-
+ 
     .contact h2 {
         font-size: 58px;
         letter-spacing: -4px;
     }
-
+ 
     .contact-bottom {
         gap: 20px;
     }
-
+ 
 }
-
-
+ 
+ 
 /* ==========================================================
    23. REDUCED MOTION
    ========================================================== */
-
+ 
 @media (prefers-reduced-motion: reduce) {
-
+ 
     *,
     *::before,
     *::after {
@@ -2028,27 +2028,27 @@ img {
         animation-iteration-count: 1 !important;
         transition-duration: .01ms !important;
     }
-
+ 
 }
 /* ==========================================================
    VAISHNAVI PORTFOLIO
    ELITE PASTEL LIQUID GLASS ENHANCEMENT
    VERSION 2.0
    ========================================================== */
-
-
+ 
+ 
 /* ==========================================================
    01. EXTENDED COLOUR SYSTEM
    ========================================================== */
-
+ 
 :root {
-
+ 
     /* Original identity */
     --black: #030407;
     --obsidian: #070910;
     --cobalt: #2457ff;
     --cobalt-light: #6489ff;
-
+ 
     /* Rich pastel palette */
     --pastel-ice: #a9d5ff;
     --pastel-lavender: #c6b5ff;
@@ -2057,521 +2057,521 @@ img {
     --pastel-champagne: #f2d6a2;
     --pastel-pink: #f0bfd0;
     --pastel-sky: #b9e4ff;
-
+ 
     /* Glass surfaces */
     --glass-white: rgba(255,255,255,.065);
     --glass-blue: rgba(36,87,255,.13);
     --glass-lavender: rgba(198,181,255,.10);
     --glass-mint: rgba(165,232,208,.09);
-
+ 
     /* Premium shadows */
     --shadow-blue:
         0 20px 60px rgba(36,87,255,.13);
-
+ 
     --shadow-lavender:
         0 20px 60px rgba(198,181,255,.12);
-
+ 
     --shadow-mint:
         0 20px 60px rgba(165,232,208,.10);
-
+ 
 }
-
-
+ 
+ 
 /* ==========================================================
    02. AMBIENT PASTEL BACKGROUND
    ========================================================== */
-
+ 
 body::after {
-
+ 
     content: "";
-
+ 
     position: fixed;
     inset: 0;
-
+ 
     z-index: -2;
-
+ 
     pointer-events: none;
-
+ 
     background:
-
+ 
         radial-gradient(
             ellipse at 15% 15%,
             rgba(36,87,255,.10),
             transparent 35%
         ),
-
+ 
         radial-gradient(
             ellipse at 85% 30%,
             rgba(198,181,255,.065),
             transparent 30%
         ),
-
+ 
         radial-gradient(
             ellipse at 55% 85%,
             rgba(165,232,208,.045),
             transparent 35%
         );
-
+ 
 }
-
-
+ 
+ 
 /* ==========================================================
    03. FLOATING AMBIENT LIGHTS
    ========================================================== */
-
+ 
 .hero::before {
-
+ 
     content: "";
-
+ 
     position: absolute;
-
+ 
     width: 420px;
     height: 420px;
-
+ 
     right: 10%;
     top: 25%;
-
+ 
     background: rgba(36,87,255,.12);
-
+ 
     filter: blur(120px);
-
+ 
     border-radius: 50%;
-
+ 
     pointer-events: none;
-
+ 
     animation: ambientFloat 12s ease-in-out infinite alternate;
-
+ 
 }
-
-
+ 
+ 
 @keyframes ambientFloat {
-
+ 
     0% {
         transform: translate(0,0) scale(1);
     }
-
+ 
     50% {
         transform: translate(-40px,35px) scale(1.15);
     }
-
+ 
     100% {
         transform: translate(35px,-25px) scale(.95);
     }
-
+ 
 }
-
-
+ 
+ 
 /* ==========================================================
    04. GLASS NAVIGATION ENHANCEMENT
    ========================================================== */
-
+ 
 .site-nav {
-
+ 
     background:
         linear-gradient(
             135deg,
             rgba(255,255,255,.085),
             rgba(255,255,255,.018)
         );
-
+ 
     border-color: rgba(198,181,255,.17);
-
+ 
     box-shadow:
-
+ 
         0 20px 60px rgba(0,0,0,.35),
-
+ 
         inset 0 1px 0 rgba(255,255,255,.13),
-
+ 
         inset 0 -1px 0 rgba(198,181,255,.04);
-
+ 
 }
-
-
+ 
+ 
 .site-nav.scrolled {
-
+ 
     background: rgba(8,10,20,.88);
-
+ 
     border-color: rgba(169,213,255,.19);
-
+ 
 }
-
-
+ 
+ 
 .nav-contact {
-
+ 
     background:
         linear-gradient(
             135deg,
             rgba(36,87,255,.23),
             rgba(198,181,255,.10)
         );
-
+ 
     border-color: rgba(169,213,255,.28);
-
+ 
 }
-
-
+ 
+ 
 .nav-contact:hover {
-
+ 
     box-shadow:
-
+ 
         0 0 25px rgba(36,87,255,.35),
-
+ 
         0 0 45px rgba(198,181,255,.12);
-
+ 
 }
-
-
+ 
+ 
 /* ==========================================================
    05. HERO PORTRAIT — LIQUID GLASS
    ========================================================== */
-
+ 
 .portrait-frame {
-
+ 
     background:
-
+ 
         linear-gradient(
             145deg,
             rgba(169,213,255,.13),
             rgba(198,181,255,.07),
             rgba(255,255,255,.015)
         );
-
+ 
     border-color: rgba(169,213,255,.22);
-
+ 
     box-shadow:
-
+ 
         0 35px 100px rgba(0,0,0,.5),
-
+ 
         0 0 55px rgba(36,87,255,.10),
-
+ 
         inset 0 1px 0 rgba(255,255,255,.20),
-
+ 
         inset 0 -1px 0 rgba(198,181,255,.10);
-
+ 
 }
-
-
+ 
+ 
 .portrait-decoration {
-
+ 
     border-color: rgba(198,181,255,.45);
-
+ 
     box-shadow:
         0 0 35px rgba(198,181,255,.08);
-
+ 
 }
-
-
+ 
+ 
 .floating-caption {
-
+ 
     background:
-
+ 
         linear-gradient(
             135deg,
             rgba(20,25,43,.92),
             rgba(25,20,42,.85)
         );
-
+ 
     border-color: rgba(198,181,255,.22);
-
+ 
     box-shadow:
-
+ 
         0 20px 55px rgba(0,0,0,.3),
-
+ 
         0 0 30px rgba(198,181,255,.09),
-
+ 
         inset 0 1px 0 rgba(255,255,255,.10);
-
+ 
 }
-
-
+ 
+ 
 /* ==========================================================
    06. BUTTON — PREMIUM GRADIENT
    ========================================================== */
-
+ 
 .primary-button {
-
+ 
     background:
-
+ 
         linear-gradient(
             110deg,
             #2457ff,
             #527cff,
             #8a9fff
         );
-
+ 
     box-shadow:
-
+ 
         0 10px 30px rgba(36,87,255,.25),
-
+ 
         0 0 25px rgba(169,213,255,.10),
-
+ 
         inset 0 1px 0 rgba(255,255,255,.35);
-
+ 
 }
-
-
+ 
+ 
 .primary-button:hover {
-
+ 
     box-shadow:
-
+ 
         0 15px 45px rgba(36,87,255,.35),
-
+ 
         0 0 35px rgba(169,213,255,.18),
-
+ 
         inset 0 1px 0 rgba(255,255,255,.4);
-
+ 
 }
-
-
+ 
+ 
 .secondary-button {
-
+ 
     background:
-
+ 
         linear-gradient(
             135deg,
             rgba(255,255,255,.065),
             rgba(198,181,255,.045)
         );
-
+ 
     border-color: rgba(198,181,255,.18);
-
+ 
 }
-
-
+ 
+ 
 .secondary-button:hover {
-
+ 
     box-shadow:
         0 10px 35px rgba(198,181,255,.12);
-
+ 
 }
-
-
+ 
+ 
 /* ==========================================================
    07. ABOUT SECTION LIGHTING
    ========================================================== */
-
+ 
 .about {
-
+ 
     background:
-
+ 
         radial-gradient(
             ellipse at 15% 80%,
             rgba(36,87,255,.12),
             transparent 45%
         ),
-
+ 
         radial-gradient(
             ellipse at 85% 20%,
             rgba(198,181,255,.055),
             transparent 35%
         ),
-
+ 
         var(--obsidian);
-
+ 
 }
-
-
+ 
+ 
 .about-heading span {
-
+ 
     background:
-
+ 
         linear-gradient(
             100deg,
             #6489ff,
             #c6b5ff,
             #a9d5ff
         );
-
+ 
     -webkit-background-clip: text;
     background-clip: text;
-
+ 
     -webkit-text-fill-color: transparent;
-
+ 
 }
-
-
+ 
+ 
 /* ==========================================================
    08. SKILL DOORS — INDIVIDUAL PASTEL IDENTITIES
    ========================================================== */
-
+ 
 .door {
-
+ 
     background:
-
+ 
         linear-gradient(
             160deg,
             rgba(255,255,255,.065),
             rgba(255,255,255,.012)
         );
-
+ 
     backdrop-filter: blur(20px);
-
+ 
     -webkit-backdrop-filter: blur(20px);
-
+ 
     box-shadow:
-
+ 
         0 25px 70px rgba(0,0,0,.35),
-
+ 
         inset 0 1px 0 rgba(255,255,255,.12);
-
+ 
     transition:
-
+ 
         transform .8s cubic-bezier(.22,1,.36,1),
-
+ 
         border-color .5s ease,
-
+ 
         box-shadow .6s ease;
-
+ 
 }
-
-
+ 
+ 
 /* Programming — Ice Blue */
-
+ 
 .door:nth-child(1) {
-
+ 
     --door-accent: #a9d5ff;
-
+ 
     background:
-
+ 
         radial-gradient(
             ellipse at 50% 20%,
             rgba(169,213,255,.23),
             transparent 65%
         ),
-
+ 
         linear-gradient(
             160deg,
             #18263e,
             #090c16
         );
-
+ 
 }
-
-
+ 
+ 
 /* Frontend — Lavender */
-
+ 
 .door:nth-child(2) {
-
+ 
     --door-accent: #c6b5ff;
-
+ 
     background:
-
+ 
         radial-gradient(
             ellipse at 50% 20%,
             rgba(198,181,255,.23),
             transparent 65%
         ),
-
+ 
         linear-gradient(
             160deg,
             #241d3c,
             #090c16
         );
-
+ 
 }
-
-
+ 
+ 
 /* Backend — Mint */
-
+ 
 .door:nth-child(3) {
-
+ 
     --door-accent: #a5e8d0;
-
+ 
     background:
-
+ 
         radial-gradient(
             ellipse at 50% 20%,
             rgba(165,232,208,.20),
             transparent 65%
         ),
-
+ 
         linear-gradient(
             160deg,
             #142e2c,
             #090c16
         );
-
+ 
 }
-
-
+ 
+ 
 /* Database — Champagne */
-
+ 
 .door:nth-child(4) {
-
+ 
     --door-accent: #f2d6a2;
-
+ 
     background:
-
+ 
         radial-gradient(
             ellipse at 50% 20%,
             rgba(242,214,162,.20),
             transparent 65%
         ),
-
+ 
         linear-gradient(
             160deg,
             #30271d,
             #090c16
         );
-
+ 
 }
-
-
+ 
+ 
 .door-content > i {
-
+ 
     color: var(--door-accent, var(--cobalt-light));
-
+ 
 }
-
-
+ 
+ 
 .door-number {
-
+ 
     color: var(--door-accent, #aab0c0);
-
+ 
 }
-
-
+ 
+ 
 .door:hover {
-
+ 
     border-color: var(--door-accent);
-
+ 
     box-shadow:
-
+ 
         0 30px 75px color-mix(
             in srgb,
             var(--door-accent) 20%,
             transparent
         ),
-
+ 
         inset 0 1px 0 rgba(255,255,255,.18);
-
+ 
 }
-
-
+ 
+ 
 .door:hover .door-content > i {
-
+ 
     filter: drop-shadow(
         0 0 22px var(--door-accent)
     );
-
+ 
 }
-
-
+ 
+ 
 .door-open {
-
+ 
     color: var(--door-accent, var(--cobalt-light));
-
+ 
 }
-
-
+ 
+ 
 /* ==========================================================
    09. DOOR LIGHT SWEEP
    ========================================================== */
-
+ 
 .door::after {
-
+ 
     background:
-
+ 
         linear-gradient(
             100deg,
             transparent 20%,
@@ -2579,273 +2579,273 @@ body::after {
             rgba(198,181,255,.14) 50%,
             transparent 75%
         );
-
+ 
 }
-
-
+ 
+ 
 /* ==========================================================
    10. PROJECT SHOWCASE — PASTEL LIGHTING
    ========================================================== */
-
+ 
 .visual-one {
-
+ 
     background:
-
+ 
         radial-gradient(
             circle at 50% 45%,
             rgba(169,213,255,.32),
             transparent 55%
         ),
-
+ 
         linear-gradient(
             135deg,
             #14244a,
             #090c18
         );
-
+ 
 }
-
-
+ 
+ 
 .visual-two {
-
+ 
     background:
-
+ 
         radial-gradient(
             circle at 50% 45%,
             rgba(198,181,255,.27),
             transparent 55%
         ),
-
+ 
         linear-gradient(
             135deg,
             #211b3c,
             #090c18
         );
-
+ 
 }
-
-
+ 
+ 
 .visual-three {
-
+ 
     background:
-
+ 
         radial-gradient(
             circle at 50% 45%,
             rgba(165,232,208,.22),
             transparent 55%
         ),
-
+ 
         linear-gradient(
             135deg,
             #132c2b,
             #090c18
         );
-
+ 
 }
-
-
+ 
+ 
 .project-graphic {
-
+ 
     background:
-
+ 
         linear-gradient(
             135deg,
             rgba(255,255,255,.13),
             rgba(198,181,255,.055)
         );
-
+ 
     border-color: rgba(255,255,255,.22);
-
+ 
     backdrop-filter: blur(30px);
-
+ 
     box-shadow:
-
+ 
         0 30px 70px rgba(0,0,0,.35),
-
+ 
         0 0 35px rgba(169,213,255,.10),
-
+ 
         inset 0 1px 0 rgba(255,255,255,.25);
-
+ 
 }
-
-
+ 
+ 
 .project-tech span {
-
+ 
     background:
-
+ 
         linear-gradient(
             135deg,
             rgba(36,87,255,.15),
             rgba(198,181,255,.07)
         );
-
+ 
     border-color: rgba(169,213,255,.20);
-
+ 
 }
-
-
+ 
+ 
 /* ==========================================================
    11. PROJECT HOVER DEPTH
    ========================================================== */
-
+ 
 .project-visual {
-
+ 
     isolation: isolate;
-
+ 
 }
-
-
+ 
+ 
 .project-visual::before {
-
+ 
     border-color: rgba(169,213,255,.17);
-
+ 
 }
-
-
+ 
+ 
 .project-visual::after {
-
+ 
     border-color: rgba(198,181,255,.10);
-
+ 
 }
-
-
+ 
+ 
 /* ==========================================================
    12. TIMELINE — PREMIUM GLASS PANELS
    ========================================================== */
-
+ 
 .timeline-content {
-
+ 
     background:
-
+ 
         linear-gradient(
             135deg,
             rgba(255,255,255,.075),
             rgba(198,181,255,.035),
             rgba(36,87,255,.025)
         );
-
+ 
     border-color: rgba(198,181,255,.15);
-
+ 
     backdrop-filter: blur(25px);
-
+ 
     box-shadow:
-
+ 
         0 20px 60px rgba(0,0,0,.25),
-
+ 
         inset 0 1px 0 rgba(255,255,255,.10);
-
+ 
 }
-
-
+ 
+ 
 .timeline-content:hover {
-
+ 
     border-color: rgba(169,213,255,.55);
-
+ 
     box-shadow:
-
+ 
         0 25px 65px rgba(36,87,255,.12),
-
+ 
         0 0 30px rgba(198,181,255,.08),
-
+ 
         inset 0 1px 0 rgba(255,255,255,.15);
-
+ 
 }
-
-
+ 
+ 
 .timeline-marker {
-
+ 
     background:
-
+ 
         linear-gradient(
             135deg,
             #6489ff,
             #c6b5ff
         );
-
+ 
     box-shadow:
-
+ 
         0 0 0 7px rgba(36,87,255,.12),
-
+ 
         0 0 25px rgba(198,181,255,.35);
-
+ 
 }
-
-
+ 
+ 
 /* ==========================================================
    13. CERTIFICATION GLASS CARDS
    ========================================================== */
-
+ 
 .certificate {
-
+ 
     background:
-
+ 
         linear-gradient(
             135deg,
             rgba(255,255,255,.075),
             rgba(198,181,255,.045),
             rgba(36,87,255,.025)
         );
-
+ 
     border-color: rgba(198,181,255,.16);
-
+ 
     box-shadow:
-
+ 
         0 20px 60px rgba(0,0,0,.25),
-
+ 
         inset 0 1px 0 rgba(255,255,255,.13);
-
+ 
 }
-
-
+ 
+ 
 .certificate:nth-child(1) > i {
-
+ 
     color: var(--pastel-ice);
-
+ 
 }
-
-
+ 
+ 
 .certificate:nth-child(2) > i {
-
+ 
     color: var(--pastel-lavender);
-
+ 
 }
-
-
+ 
+ 
 .certificate:nth-child(3) > i {
-
+ 
     color: var(--pastel-mint);
-
+ 
 }
-
-
+ 
+ 
 .certificate:nth-child(4) > i {
-
+ 
     color: var(--pastel-champagne);
-
+ 
 }
-
-
+ 
+ 
 .certificate:hover {
-
+ 
     box-shadow:
-
+ 
         0 25px 70px rgba(36,87,255,.13),
-
+ 
         0 0 30px rgba(198,181,255,.10),
-
+ 
         inset 0 1px 0 rgba(255,255,255,.17);
-
+ 
 }
-
-
+ 
+ 
 /* ==========================================================
    14. CONTACT — IRIDESCENT TEXT
    ========================================================== */
-
+ 
 .contact h2 span {
-
+ 
     background:
-
+ 
         linear-gradient(
             110deg,
             #6489ff,
@@ -2853,244 +2853,244 @@ body::after {
             #a9d5ff,
             #6489ff
         );
-
+ 
     background-size: 200% auto;
-
+ 
     -webkit-background-clip: text;
     background-clip: text;
-
+ 
     -webkit-text-fill-color: transparent;
-
+ 
     animation: gradientFlow 6s linear infinite;
-
+ 
 }
-
-
+ 
+ 
 @keyframes gradientFlow {
-
+ 
     to {
         background-position: 200% center;
     }
-
+ 
 }
-
-
+ 
+ 
 /* ==========================================================
    15. CONTACT BUTTON GLOW
    ========================================================== */
-
+ 
 .contact-button {
-
+ 
     background:
-
+ 
         linear-gradient(
             120deg,
             #2457ff,
             #527cff,
             #819aff
         );
-
+ 
     box-shadow:
-
+ 
         0 15px 45px rgba(36,87,255,.28),
-
+ 
         0 0 35px rgba(169,213,255,.13),
-
+ 
         inset 0 1px 0 rgba(255,255,255,.3);
-
+ 
 }
-
-
+ 
+ 
 .contact-button:hover {
-
+ 
     box-shadow:
-
+ 
         0 25px 65px rgba(36,87,255,.4),
-
+ 
         0 0 45px rgba(198,181,255,.16);
-
+ 
 }
-
-
+ 
+ 
 /* ==========================================================
    16. SECTION DIVIDERS
    ========================================================== */
-
+ 
 .section-topline {
-
+ 
     border-bottom-color: rgba(198,181,255,.13);
-
+ 
 }
-
-
+ 
+ 
 .section-topline span:first-child {
-
+ 
     color: var(--pastel-ice);
-
+ 
 }
-
-
+ 
+ 
 /* ==========================================================
    17. TEXT HIGHLIGHTS
    ========================================================== */
-
+ 
 .about-heading span,
 .expertise-heading h2 span,
 .projects-heading h2 span,
 .journey-heading span,
 .certification-heading span {
-
+ 
     background:
-
+ 
         linear-gradient(
             100deg,
             #6489ff,
             #c6b5ff,
             #a9d5ff
         );
-
+ 
     -webkit-background-clip: text;
     background-clip: text;
-
+ 
     -webkit-text-fill-color: transparent;
-
+ 
 }
-
-
+ 
+ 
 /* ==========================================================
    18. SOCIAL ICON GLASS
    ========================================================== */
-
+ 
 .hero-socials a {
-
+ 
     background:
-
+ 
         linear-gradient(
             145deg,
             rgba(255,255,255,.09),
             rgba(198,181,255,.035)
         );
-
+ 
     border-color: rgba(198,181,255,.16);
-
+ 
     box-shadow:
         inset 0 1px 0 rgba(255,255,255,.1);
-
+ 
 }
-
-
+ 
+ 
 .hero-socials a:hover {
-
+ 
     box-shadow:
-
+ 
         0 10px 30px rgba(36,87,255,.25),
-
+ 
         0 0 20px rgba(198,181,255,.12);
-
+ 
 }
-
-
+ 
+ 
 /* ==========================================================
    19. FOOTER DETAIL
    ========================================================== */
-
+ 
 .footer {
-
+ 
     border-top-color: rgba(198,181,255,.12);
-
+ 
     background:
-
+ 
         linear-gradient(
             180deg,
             #070910,
             #030407
         );
-
+ 
 }
-
-
+ 
+ 
 /* ==========================================================
    20. RESPONSIVE PASTEL ADJUSTMENTS
    ========================================================== */
-
+ 
 @media (max-width: 768px) {
-
+ 
     .hero::before {
-
+ 
         width: 250px;
         height: 250px;
-
+ 
         right: -10%;
         top: 30%;
-
+ 
         filter: blur(90px);
-
+ 
     }
-
+ 
     .door {
-
+ 
         backdrop-filter: blur(15px);
-
+ 
     }
-
+ 
     .project-visual {
-
+ 
         box-shadow:
             0 20px 50px rgba(0,0,0,.3);
-
+ 
     }
-
+ 
 }
-
-
+ 
+ 
 @media (max-width: 420px) {
-
+ 
     .floating-caption {
-
+ 
         font-size: 8px;
-
+ 
         padding: 11px 14px;
-
+ 
     }
-
+ 
 }
-
-
+ 
+ 
 /* ==========================================================
    21. PERFORMANCE & ACCESSIBILITY
    ========================================================== */
-
+ 
 @media (prefers-reduced-motion: reduce) {
-
+ 
     .hero::before,
     .contact h2 span {
-
+ 
         animation: none !important;
-
+ 
     }
-
+ 
 }
-
-
+ 
+ 
 /* ==========================================================
    END — ELITE PASTEL LIQUID GLASS ENHANCEMENT
    ========================================================== */
-
+ 
 /* ==========================================================
    VAISHNAVI PORTFOLIO
    ELITE EDITION 3.0
    IMMERSIVE LIQUID GLASS EXPERIENCE
    ========================================================== */
-
-
+ 
+ 
 /* ==========================================================
    01. ADVANCED DESIGN TOKENS
    ========================================================== */
-
+ 
 :root {
-
+ 
     /* Premium pastel palette */
-
+ 
     --ice-blue: #B9DEFF;
     --soft-lavender: #C9B8FF;
     --dream-purple: #AFA0F5;
@@ -3098,101 +3098,101 @@ body::after {
     --champagne-glow: #F3D9A8;
     --rose-glow: #F4C5D8;
     --pearl-white: #F5F4FF;
-
+ 
     /* Ambient lighting */
-
+ 
     --ambient-blue: rgba(36, 87, 255, .18);
     --ambient-purple: rgba(175, 160, 245, .14);
     --ambient-mint: rgba(168, 235, 212, .12);
     --ambient-pink: rgba(244, 197, 216, .10);
-
+ 
     /* Glass surfaces */
-
+ 
     --liquid-glass:
         linear-gradient(
             135deg,
             rgba(255,255,255,.10),
             rgba(255,255,255,.025)
         );
-
+ 
     --liquid-border:
         rgba(255,255,255,.16);
-
+ 
     /* Premium transitions */
-
+ 
     --spring:
         cubic-bezier(.175,.885,.32,1.275);
-
+ 
     --apple-ease:
         cubic-bezier(.22,1,.36,1);
-
+ 
     --cinematic-ease:
         cubic-bezier(.76,0,.24,1);
-
+ 
 }
-
-
+ 
+ 
 /* ==========================================================
    02. ADVANCED BACKGROUND DEPTH
    ========================================================== */
-
+ 
 body {
-
+ 
     background-color: #030407;
-
+ 
     background-image:
-
+ 
         radial-gradient(
             ellipse at 10% 10%,
             rgba(36,87,255,.055),
             transparent 35%
         ),
-
+ 
         radial-gradient(
             ellipse at 90% 40%,
             rgba(198,181,255,.035),
             transparent 35%
         ),
-
+ 
         radial-gradient(
             ellipse at 50% 90%,
             rgba(165,232,208,.025),
             transparent 40%
         );
-
+ 
 }
-
-
+ 
+ 
 /* ==========================================================
    03. AURORA LIGHTING
    ========================================================== */
-
+ 
 .hero {
-
+ 
     isolation: isolate;
-
+ 
 }
-
+ 
 .hero::before {
-
+ 
     z-index: -1;
-
+ 
 }
-
+ 
 .hero::after {
-
+ 
     content: "";
-
+ 
     position: absolute;
-
+ 
     width: 550px;
     height: 550px;
-
+ 
     left: -15%;
     bottom: -25%;
-
+ 
     border-radius: 50%;
-
+ 
     background:
         radial-gradient(
             circle,
@@ -3200,169 +3200,169 @@ body {
             rgba(36,87,255,.05) 45%,
             transparent 70%
         );
-
+ 
     filter: blur(100px);
-
+ 
     pointer-events: none;
-
+ 
     z-index: -1;
-
+ 
     animation: auroraDrift 16s ease-in-out infinite alternate;
-
+ 
 }
-
-
+ 
+ 
 @keyframes auroraDrift {
-
+ 
     0% {
-
+ 
         transform:
             translate3d(0,0,0)
             scale(1);
-
+ 
     }
-
+ 
     50% {
-
+ 
         transform:
             translate3d(90px,-50px,0)
             scale(1.2);
-
+ 
     }
-
+ 
     100% {
-
+ 
         transform:
             translate3d(30px,70px,0)
             scale(.9);
-
+ 
     }
-
+ 
 }
-
-
+ 
+ 
 /* ==========================================================
    04. PASTEL SECTION ATMOSPHERES
    ========================================================== */
-
+ 
 .about {
-
+ 
     background:
-
+ 
         radial-gradient(
             ellipse at 85% 20%,
             rgba(198,181,255,.075),
             transparent 35%
         ),
-
+ 
         radial-gradient(
             ellipse at 10% 90%,
             rgba(169,213,255,.07),
             transparent 40%
         ),
-
+ 
         var(--obsidian);
-
+ 
 }
-
-
+ 
+ 
 .expertise {
-
+ 
     background:
-
+ 
         radial-gradient(
             ellipse at 15% 40%,
             rgba(169,213,255,.045),
             transparent 35%
         ),
-
+ 
         radial-gradient(
             ellipse at 85% 75%,
             rgba(198,181,255,.045),
             transparent 35%
         ),
-
+ 
         var(--black);
-
+ 
 }
-
-
+ 
+ 
 .projects {
-
+ 
     background:
-
+ 
         radial-gradient(
             ellipse at 85% 20%,
             rgba(165,232,208,.035),
             transparent 40%
         ),
-
+ 
         var(--obsidian);
-
+ 
 }
-
-
+ 
+ 
 .journey {
-
+ 
     background:
-
+ 
         radial-gradient(
             ellipse at 10% 50%,
             rgba(198,181,255,.06),
             transparent 40%
         ),
-
+ 
         var(--black);
-
+ 
 }
-
-
+ 
+ 
 .certifications {
-
+ 
     background:
-
+ 
         radial-gradient(
             ellipse at 90% 80%,
             rgba(242,214,162,.05),
             transparent 40%
         ),
-
+ 
         var(--obsidian);
-
+ 
 }
-
-
+ 
+ 
 /* ==========================================================
    05. IRIDESCENT GLASS BORDERS
    ========================================================== */
-
+ 
 .portrait-frame,
 .site-nav,
 .certificate,
 .timeline-content,
 .project-visual {
-
+ 
     position: relative;
-
+ 
 }
-
-
+ 
+ 
 .portrait-frame::before,
 .certificate::before,
 .timeline-content::before {
-
+ 
     content: "";
-
+ 
     position: absolute;
-
+ 
     inset: 0;
-
+ 
     border-radius: inherit;
-
+ 
     padding: 1px;
-
+ 
     background:
-
+ 
         linear-gradient(
             135deg,
             rgba(169,213,255,.45),
@@ -3370,670 +3370,670 @@ body {
             rgba(198,181,255,.30) 65%,
             rgba(165,232,208,.30)
         );
-
+ 
     -webkit-mask:
         linear-gradient(#fff 0 0) content-box,
         linear-gradient(#fff 0 0);
     mask:
         linear-gradient(#fff 0 0) content-box,
         linear-gradient(#fff 0 0);
-
+ 
     -webkit-mask-composite: xor;
-
+ 
     mask-composite: exclude;
-
+ 
     pointer-events: none;
-
+ 
     opacity: .65;
-
+ 
     transition: opacity .5s ease;
-
+ 
 }
-
-
+ 
+ 
 .portrait-frame:hover::before,
 .certificate:hover::before,
 .timeline-content:hover::before {
-
+ 
     opacity: 1;
-
+ 
 }
-
-
+ 
+ 
 /* ==========================================================
    06. ENHANCED GLASS REFLECTIONS
    ========================================================== */
-
+ 
 .site-nav {
-
+ 
     background:
-
+ 
         linear-gradient(
             120deg,
             rgba(255,255,255,.085),
             rgba(198,181,255,.035),
             rgba(36,87,255,.045)
         );
-
+ 
     backdrop-filter:
         blur(30px)
         saturate(180%);
-
+ 
     -webkit-backdrop-filter:
         blur(30px)
         saturate(180%);
-
+ 
 }
-
-
+ 
+ 
 .secondary-button {
-
+ 
     position: relative;
-
+ 
     overflow: hidden;
-
+ 
     isolation: isolate;
-
+ 
 }
-
-
+ 
+ 
 .secondary-button::before {
-
+ 
     content: "";
-
+ 
     position: absolute;
-
+ 
     inset: -100%;
-
+ 
     background:
-
+ 
         linear-gradient(
             110deg,
             transparent 40%,
             rgba(255,255,255,.15) 50%,
             transparent 60%
         );
-
+ 
     transform: translateX(-100%);
-
+ 
     transition: transform .8s ease;
-
+ 
     z-index: -1;
-
+ 
 }
-
-
+ 
+ 
 .secondary-button:hover::before {
-
+ 
     transform: translateX(100%);
-
+ 
 }
-
-
+ 
+ 
 /* ==========================================================
    07. PREMIUM SOCIAL ICON INTERACTIONS
    ========================================================== */
-
+ 
 .hero-socials a {
-
+ 
     position: relative;
-
+ 
     overflow: hidden;
-
+ 
     isolation: isolate;
-
+ 
 }
-
-
+ 
+ 
 .hero-socials a::before {
-
+ 
     content: "";
-
+ 
     position: absolute;
-
+ 
     inset: 0;
-
+ 
     background:
-
+ 
         linear-gradient(
             135deg,
             rgba(169,213,255,.25),
             rgba(198,181,255,.15)
         );
-
+ 
     opacity: 0;
-
+ 
     transition: opacity .4s ease;
-
+ 
     z-index: -1;
-
+ 
 }
-
-
+ 
+ 
 .hero-socials a:hover::before {
-
+ 
     opacity: 1;
-
+ 
 }
-
-
+ 
+ 
 .hero-socials a:hover {
-
+ 
     transform:
         translateY(-7px)
         scale(1.08);
-
+ 
     border-color: rgba(169,213,255,.55);
-
+ 
 }
-
-
+ 
+ 
 /* ==========================================================
    08. ADVANCED SKILL DOOR DETAILS
    ========================================================== */
-
+ 
 .door {
-
+ 
     isolation: isolate;
-
+ 
     transform-style: preserve-3d;
-
+ 
     will-change: transform;
-
+ 
 }
-
-
+ 
+ 
 .door-content {
-
+ 
     transform-style: preserve-3d;
-
+ 
 }
-
-
+ 
+ 
 .door-content > i {
-
+ 
     transform: translateZ(30px);
-
+ 
 }
-
-
+ 
+ 
 .door h3 {
-
+ 
     transform: translateZ(20px);
-
+ 
 }
-
-
+ 
+ 
 .door p {
-
+ 
     transform: translateZ(12px);
-
+ 
 }
-
-
+ 
+ 
 .door:hover {
-
+ 
     transform:
         translateY(-18px)
         rotateX(5deg)
         scale(1.015);
-
+ 
 }
-
-
+ 
+ 
 .door:focus-visible {
-
+ 
     outline: 2px solid var(--ice-blue);
-
+ 
     outline-offset: 6px;
-
+ 
 }
-
-
+ 
+ 
 /* ==========================================================
    09. SKILL DOOR PASTEL REFLECTIONS
    ========================================================== */
-
+ 
 .door:nth-child(1):hover {
-
+ 
     box-shadow:
-
+ 
         0 30px 80px rgba(169,213,255,.15),
-
+ 
         0 0 35px rgba(169,213,255,.10),
-
+ 
         inset 0 1px 0 rgba(255,255,255,.2);
-
+ 
 }
-
-
+ 
+ 
 .door:nth-child(2):hover {
-
+ 
     box-shadow:
-
+ 
         0 30px 80px rgba(198,181,255,.15),
-
+ 
         0 0 35px rgba(198,181,255,.10),
-
+ 
         inset 0 1px 0 rgba(255,255,255,.2);
-
+ 
 }
-
-
+ 
+ 
 .door:nth-child(3):hover {
-
+ 
     box-shadow:
-
+ 
         0 30px 80px rgba(165,232,208,.14),
-
+ 
         0 0 35px rgba(165,232,208,.10),
-
+ 
         inset 0 1px 0 rgba(255,255,255,.2);
-
+ 
 }
-
-
+ 
+ 
 .door:nth-child(4):hover {
-
+ 
     box-shadow:
-
+ 
         0 30px 80px rgba(242,214,162,.13),
-
+ 
         0 0 35px rgba(242,214,162,.10),
-
+ 
         inset 0 1px 0 rgba(255,255,255,.2);
-
+ 
 }
-
-
+ 
+ 
 /* ==========================================================
    10. PROJECT CARD DEPTH
    ========================================================== */
-
+ 
 .project-visual {
-
+ 
     isolation: isolate;
-
+ 
     transform-style: preserve-3d;
-
+ 
     will-change: transform;
-
+ 
 }
-
-
+ 
+ 
 .project-graphic {
-
+ 
     transform: translateZ(35px);
-
+ 
 }
-
-
+ 
+ 
 .project-index {
-
+ 
     transform: translateZ(20px);
-
+ 
 }
-
-
+ 
+ 
 .visual-caption {
-
+ 
     transform: translateZ(20px);
-
+ 
 }
-
-
+ 
+ 
 .project-visual:hover .project-graphic {
-
+ 
     transform:
         translateZ(45px)
         rotate(-8deg)
         scale(1.12);
-
+ 
 }
-
-
+ 
+ 
 /* ==========================================================
    11. PROJECT TECHNOLOGY BADGES
    ========================================================== */
-
+ 
 .project-tech span {
-
+ 
     position: relative;
-
+ 
     overflow: hidden;
-
+ 
     transition:
         transform .4s var(--apple-ease),
         border-color .4s ease,
         background .4s ease;
-
+ 
 }
-
-
+ 
+ 
 .project-tech span:hover {
-
+ 
     transform: translateY(-4px);
-
+ 
     border-color: var(--ice-blue);
-
+ 
     background:
         rgba(169,213,255,.13);
-
+ 
     box-shadow:
         0 8px 25px rgba(169,213,255,.09);
-
+ 
 }
-
-
+ 
+ 
 /* ==========================================================
    12. TIMELINE PROGRESSION DETAILS
    ========================================================== */
-
+ 
 .timeline-content {
-
+ 
     position: relative;
-
+ 
     overflow: hidden;
-
+ 
     isolation: isolate;
-
+ 
 }
-
-
+ 
+ 
 .timeline-content::after {
-
+ 
     content: "";
-
+ 
     position: absolute;
-
+ 
     left: 0;
     top: 0;
-
+ 
     width: 3px;
     height: 0%;
-
+ 
     background:
-
+ 
         linear-gradient(
             180deg,
             var(--ice-blue),
             var(--soft-lavender)
         );
-
+ 
     transition: height .7s var(--apple-ease);
-
+ 
 }
-
-
+ 
+ 
 .timeline-content:hover::after {
-
+ 
     height: 100%;
-
+ 
 }
-
-
+ 
+ 
 .timeline-content:hover h3 {
-
+ 
     color: var(--ice-blue);
-
+ 
     transition: color .4s ease;
-
+ 
 }
-
-
+ 
+ 
 /* ==========================================================
    13. CERTIFICATE PREMIUM EFFECT
    ========================================================== */
-
+ 
 .certificate {
-
+ 
     transform-style: preserve-3d;
-
+ 
     will-change: transform;
-
+ 
     overflow: hidden;
-
+ 
 }
-
-
+ 
+ 
 .certificate > i {
-
+ 
     transition:
         transform .5s var(--spring),
         filter .5s ease;
-
+ 
 }
-
-
+ 
+ 
 .certificate:hover > i {
-
+ 
     transform:
         translateY(-5px)
         scale(1.2)
         rotate(-8deg);
-
+ 
     filter:
         drop-shadow(0 0 15px currentColor);
-
+ 
 }
-
-
+ 
+ 
 .certificate h3 {
-
+ 
     transition:
         transform .5s var(--apple-ease);
-
+ 
 }
-
-
+ 
+ 
 .certificate:hover h3 {
-
+ 
     transform: translateX(5px);
-
+ 
 }
-
-
+ 
+ 
 /* ==========================================================
    14. CONTACT AMBIENT GLOW
    ========================================================== */
-
+ 
 .contact {
-
+ 
     isolation: isolate;
-
+ 
 }
-
-
+ 
+ 
 .contact::before {
-
+ 
     content: "";
-
+ 
     position: absolute;
-
+ 
     width: 550px;
     height: 550px;
-
+ 
     top: 25%;
     left: 50%;
-
+ 
     transform: translateX(-50%);
-
+ 
     border-radius: 50%;
-
+ 
     background:
-
+ 
         radial-gradient(
             circle,
             rgba(36,87,255,.15),
             rgba(198,181,255,.07) 40%,
             transparent 70%
         );
-
+ 
     filter: blur(100px);
-
+ 
     z-index: -1;
-
+ 
     pointer-events: none;
-
+ 
 }
-
-
+ 
+ 
 .contact-button {
-
+ 
     position: relative;
-
+ 
     overflow: hidden;
-
+ 
 }
-
-
+ 
+ 
 .contact-button::after {
-
+ 
     content: "";
-
+ 
     position: absolute;
-
+ 
     inset: 0;
-
+ 
     background:
-
+ 
         linear-gradient(
             110deg,
             transparent 30%,
             rgba(255,255,255,.3) 50%,
             transparent 70%
         );
-
+ 
     transform: translateX(-120%);
-
+ 
     transition: transform .8s ease;
-
+ 
 }
-
-
+ 
+ 
 .contact-button:hover::after {
-
+ 
     transform: translateX(120%);
-
+ 
 }
-
-
+ 
+ 
 /* ==========================================================
    15. PREMIUM TEXT SELECTION
    ========================================================== */
-
+ 
 ::selection {
-
+ 
     background: rgba(100,137,255,.75);
-
+ 
     color: white;
-
+ 
     text-shadow:
         0 0 10px rgba(255,255,255,.2);
-
+ 
 }
-
-
+ 
+ 
 /* ==========================================================
    16. SMOOTH IMAGE INTERACTIONS
    ========================================================== */
-
+ 
 .portrait-image {
-
+ 
     will-change: transform;
-
+ 
     transition:
-
+ 
         transform 1.2s var(--apple-ease),
-
+ 
         filter .8s ease;
-
+ 
 }
-
-
+ 
+ 
 .portrait-frame:hover .portrait-image {
-
+ 
     transform: scale(1.055);
-
+ 
     filter:
         saturate(1.05)
         contrast(1.03);
-
+ 
 }
-
-
+ 
+ 
 /* ==========================================================
    17. FLOATING UI ELEMENTS
    ========================================================== */
-
+ 
 .floating-caption {
-
+ 
     animation:
-
+ 
         floatingCaption 5s ease-in-out infinite;
-
+ 
 }
-
-
+ 
+ 
 @keyframes floatingCaption {
-
+ 
     0%,
     100% {
-
+ 
         transform: translateY(0);
-
+ 
     }
-
+ 
     50% {
-
+ 
         transform: translateY(-9px);
-
+ 
     }
-
+ 
 }
-
-
+ 
+ 
 /* ==========================================================
    18. ADVANCED BUTTON PRESS
    ========================================================== */
-
+ 
 .primary-button:active,
 .secondary-button:active,
 .contact-button:active {
-
+ 
     transform: scale(.96);
-
+ 
     transition:
         transform .15s ease;
-
+ 
 }
-
-
+ 
+ 
 /* ==========================================================
    19. SECTION TRANSITION DETAILS
    ========================================================== */
-
+ 
 .section {
-
+ 
     position: relative;
-
+ 
 }
-
-
+ 
+ 
 .section:not(.contact)::after {
-
+ 
     content: "";
-
+ 
     position: absolute;
-
+ 
     left: 8%;
     right: 8%;
     bottom: 0;
-
+ 
     height: 1px;
-
+ 
     background:
-
+ 
         linear-gradient(
             90deg,
             transparent,
@@ -4041,125 +4041,125 @@ body {
             rgba(198,181,255,.15),
             transparent
         );
-
+ 
     pointer-events: none;
-
+ 
 }
-
-
+ 
+ 
 /* ==========================================================
    20. ACCESSIBILITY & PERFORMANCE
    ========================================================== */
-
+ 
 @media (prefers-reduced-motion: reduce) {
-
+ 
     .hero::after,
     .floating-caption {
-
+ 
         animation: none !important;
-
+ 
     }
-
+ 
 }
-
-
+ 
+ 
 @media (max-width: 768px) {
-
+ 
     .hero::after {
-
+ 
         width: 280px;
         height: 280px;
-
+ 
         filter: blur(75px);
-
+ 
     }
-
+ 
     .contact::before {
-
+ 
         width: 300px;
         height: 300px;
-
+ 
     }
-
+ 
     .door:hover {
-
+ 
         transform: translateY(-7px);
-
+ 
     }
-
+ 
     .certificate:hover {
-
+ 
         transform: translateY(-5px);
-
+ 
     }
-
+ 
     .floating-caption {
-
+ 
         animation: none;
-
+ 
     }
-
+ 
 }
-
-
+ 
+ 
 @media (hover: none) {
-
+ 
     .door:hover,
     .certificate:hover,
     .project-visual:hover {
-
+ 
         transform: none;
-
+ 
     }
-
+ 
 }
-
-
+ 
+ 
 /* ==========================================================
    21. FINAL GLASS POLISH
    ========================================================== */
-
+ 
 .site-nav,
 .portrait-frame,
 .door,
 .project-visual,
 .timeline-content,
 .certificate {
-
+ 
     -webkit-backdrop-filter:
         blur(24px)
         saturate(150%);
     backdrop-filter:
         blur(24px)
         saturate(150%);
-
+ 
 }
-
-
+ 
+ 
 .site-nav,
 .portrait-frame,
 .door,
 .project-visual,
 .timeline-content,
 .certificate {
-
+ 
     backface-visibility: hidden;
-
+ 
 }
-
-
+ 
+ 
 /* ==========================================================
    END OF ELITE EDITION 3.0
    ========================================================== */
-
+ 
 /* ==========================================================
    VAISHNAVI PORTFOLIO — ELITE EDITION 4.0
    APPEND-ONLY ENHANCEMENT
    Do not remove previous CSS.
    ========================================================== */
-
+ 
 /* ---------- 01. ADVANCED DESIGN TOKENS ---------- */
-
+ 
 :root {
     --elite-ice: #c8e8ff;
     --elite-lavender: #d9caff;
@@ -4171,13 +4171,13 @@ body {
     --elite-glass-border: rgba(255, 255, 255, 0.13);
     --elite-ease: cubic-bezier(.22, 1, .36, 1);
 }
-
+ 
 /* ---------- 02. AMBIENT AURORA ---------- */
-
+ 
 body {
     isolation: isolate;
 }
-
+ 
 body::after {
     content: "";
     position: fixed;
@@ -4191,7 +4191,7 @@ body::after {
         radial-gradient(ellipse at 48% 90%, rgba(150, 230, 210, .09), transparent 35%);
     animation: eliteAurora 18s ease-in-out infinite alternate;
 }
-
+ 
 @keyframes eliteAurora {
     0% {
         transform: translate3d(-2%, -1%, 0) scale(1);
@@ -4206,9 +4206,9 @@ body::after {
         filter: hue-rotate(-12deg);
     }
 }
-
+ 
 /* ---------- 03. PREMIUM GLASS SURFACES ---------- */
-
+ 
 .site-nav,
 .door,
 .project-showcase,
@@ -4218,7 +4218,7 @@ body::after {
     -webkit-backdrop-filter: blur(24px) saturate(145%);
     backdrop-filter: blur(24px) saturate(145%);
 }
-
+ 
 .door,
 .project-showcase,
 .certificate {
@@ -4238,7 +4238,7 @@ body::after {
         box-shadow .5s ease,
         background .5s ease;
 }
-
+ 
 .door:hover,
 .project-showcase:hover,
 .certificate:hover {
@@ -4248,9 +4248,9 @@ body::after {
         0 25px 70px rgba(0,0,0,.28),
         0 0 35px rgba(110,145,255,.08);
 }
-
+ 
 /* ---------- 04. IRIDESCENT EDGE ---------- */
-
+ 
 .door,
 .project-showcase,
 .certificate,
@@ -4258,7 +4258,7 @@ body::after {
     position: relative;
     isolation: isolate;
 }
-
+ 
 .door::after,
 .project-showcase::after,
 .certificate::after {
@@ -4288,32 +4288,32 @@ body::after {
     opacity: .45;
     transition: opacity .4s ease;
 }
-
+ 
 .door:hover::after,
 .project-showcase:hover::after,
 .certificate:hover::after {
     opacity: 1;
 }
-
+ 
 /* ---------- 05. PORTRAIT DEPTH ---------- */
-
+ 
 .portrait-frame {
     transform-style: preserve-3d;
     transition: transform .7s var(--elite-ease);
 }
-
+ 
 .portrait-frame img {
     transition:
         transform .8s var(--elite-ease),
         filter .8s ease;
     will-change: transform;
 }
-
+ 
 .portrait-frame:hover img {
     transform: scale(1.035) translateZ(12px);
     filter: saturate(1.08) contrast(1.03);
 }
-
+ 
 .portrait-frame::after {
     content: "";
     position: absolute;
@@ -4328,18 +4328,18 @@ body::after {
         rgba(130,160,255,.12)
     );
 }
-
+ 
 /* ---------- 06. SKILL CARD 3D HOVER ---------- */
-
+ 
 .door {
     transform-style: preserve-3d;
     will-change: transform;
 }
-
+ 
 .door > * {
     transform: translateZ(18px);
 }
-
+ 
 .door:focus-visible,
 .project-showcase:focus-visible,
 .certificate:focus-visible,
@@ -4349,25 +4349,25 @@ a:focus-visible {
     outline: 2px solid var(--elite-ice);
     outline-offset: 5px;
 }
-
+ 
 /* ---------- 07. PROJECT VISUAL DEPTH ---------- */
-
+ 
 .project-visual {
     overflow: hidden;
     transform-style: preserve-3d;
 }
-
+ 
 .project-visual img {
     transition:
         transform .9s var(--elite-ease),
         filter .7s ease;
 }
-
+ 
 .project-showcase:hover .project-visual img {
     transform: scale(1.075);
     filter: saturate(1.12);
 }
-
+ 
 .project-showcase .project-visual::after {
     content: "";
     position: absolute;
@@ -4381,9 +4381,9 @@ a:focus-visible {
     );
     opacity: .5;
 }
-
+ 
 /* ---------- 08. INTERACTIVE BUTTON FEEL ---------- */
-
+ 
 .hero-buttons a,
 .nav-contact,
 .contact-button,
@@ -4393,14 +4393,14 @@ button {
         box-shadow .35s ease,
         background .35s ease;
 }
-
+ 
 .hero-buttons a:active,
 .nav-contact:active,
 .contact-button:active,
 button:active {
     transform: scale(.96);
 }
-
+ 
 .hero-buttons a:hover,
 .nav-contact:hover,
 .contact-button:hover {
@@ -4408,9 +4408,9 @@ button:active {
         0 12px 35px rgba(100,135,255,.18),
         inset 0 1px 0 rgba(255,255,255,.22);
 }
-
+ 
 /* ---------- 09. SOCIAL ICON INTERACTIONS ---------- */
-
+ 
 .hero-socials a,
 .social-links a {
     display: inline-flex;
@@ -4421,34 +4421,34 @@ button:active {
         color .3s ease,
         background .3s ease;
 }
-
+ 
 .hero-socials a:hover,
 .social-links a:hover {
     transform: translateY(-5px) scale(1.08);
     color: var(--elite-ice);
 }
-
+ 
 /* ---------- 10. TIMELINE DETAILS ---------- */
-
+ 
 .timeline-content {
     transition:
         transform .5s var(--elite-ease),
         border-color .4s ease,
         box-shadow .4s ease;
 }
-
+ 
 .timeline-content:hover {
     transform: translateY(-5px);
     border-color: rgba(200,232,255,.3);
     box-shadow: 0 18px 45px rgba(0,0,0,.2);
 }
-
+ 
 /* ---------- 11. CERTIFICATE INTERACTION ---------- */
-
+ 
 .certificate {
     overflow: hidden;
 }
-
+ 
 .certificate::before {
     content: "";
     position: absolute;
@@ -4466,37 +4466,37 @@ button:active {
     transition: left .8s var(--elite-ease);
     pointer-events: none;
 }
-
+ 
 .certificate:hover::before {
     left: 130%;
 }
-
+ 
 /* ---------- 12. SECTION TRANSITIONS ---------- */
-
+ 
 section {
     scroll-margin-top: 110px;
 }
-
+ 
 .section-heading,
 .hero-name,
 .hero-role {
     text-wrap: balance;
 }
-
+ 
 .section-heading {
     position: relative;
 }
-
+ 
 /* ---------- 13. SCROLLBAR POLISH ---------- */
-
+ 
 ::-webkit-scrollbar {
     width: 7px;
 }
-
+ 
 ::-webkit-scrollbar-track {
     background: #090a0e;
 }
-
+ 
 ::-webkit-scrollbar-thumb {
     background: linear-gradient(
         180deg,
@@ -4506,42 +4506,42 @@ section {
     );
     border-radius: 20px;
 }
-
+ 
 ::-webkit-scrollbar-thumb:hover {
     background: #d9caff;
 }
-
+ 
 /* ---------- 14. MOBILE REFINEMENTS ---------- */
-
+ 
 @media (max-width: 768px) {
     body::after {
         opacity: .16;
     }
-
+ 
     .door,
     .project-showcase,
     .certificate {
         -webkit-backdrop-filter: blur(16px);
         backdrop-filter: blur(16px);
     }
-
+ 
     .portrait-frame:hover img {
         transform: none;
     }
-
+ 
     .door:hover,
     .project-showcase:hover,
     .certificate:hover {
         transform: none;
     }
-
+ 
     section {
         scroll-margin-top: 80px;
     }
 }
-
+ 
 /* ---------- 15. ACCESSIBILITY ---------- */
-
+ 
 @media (prefers-reduced-motion: reduce) {
     body::after,
     *,
@@ -4553,11 +4553,11 @@ section {
         transition-duration: .01ms !important;
     }
 }
-
+ 
 /* ---------- END OF ELITE EDITION 4.0 CSS ---------- */
-
+ 
 /* EDITION 4.0 — JAVASCRIPT SUPPORT STATES */
-
+ 
 .elite-reveal {
     opacity: 0;
     transform: translateY(35px);
@@ -4565,30 +4565,30 @@ section {
         opacity .8s ease,
         transform .8s cubic-bezier(.22, 1, .36, 1);
 }
-
+ 
 .elite-reveal.elite-visible {
     opacity: 1;
     transform: translateY(0);
 }
-
+ 
 .cursor.cursor-active {
     transform: translate(-50%, -50%) scale(1.5);
 }
-
+ 
 .cursor-follower.cursor-active {
     transform: translate(-50%, -50%) scale(1.4);
     border-color: rgba(200, 232, 255, .8);
 }
-
+ 
 .image-loaded {
     opacity: 1;
 }
-
+ 
 .nav-scrolled {
     box-shadow: 0 12px 40px rgba(0, 0, 0, .2);
 }
 /* REMOVE CUSTOM MOUSE CURSOR */
-
+ 
 .cursor,
 .cursor-follower {
     display: none !important;
@@ -4596,14 +4596,14 @@ section {
     visibility: hidden !important;
     pointer-events: none !important;
 }
-
+ 
 /* Restore the normal system cursor */
-
+ 
 html,
 body {
     cursor: auto !important;
 }
-
+ 
 a,
 button,
 [role="button"],
@@ -4612,7 +4612,7 @@ select,
 textarea {
     cursor: pointer !important;
 }
-
+ 
 input,
 textarea {
     cursor: text !important;
@@ -4620,7 +4620,7 @@ textarea {
 /* ==========================================================
    EDITION 5.0 — JAVASCRIPT SUPPORT
 ========================================================== */
-
+ 
 /* Native cursor only */
 .cursor,
 .cursor-follower {
@@ -4628,28 +4628,28 @@ textarea {
     visibility: hidden !important;
     pointer-events: none !important;
 }
-
+ 
 /* Navigation active state */
 .nav-center a.active {
     color: var(--elite-ice, #c8e8ff);
 }
-
+ 
 /* Mobile navigation */
 @media (max-width: 768px) {
-
+ 
     .nav-center.menu-visible {
         display: flex !important;
         opacity: 1;
         visibility: visible;
         pointer-events: auto;
     }
-
+ 
     body.menu-open {
         overflow: hidden;
     }
-
+ 
 }
-
+ 
 /* Reveal fallback */
 .elite-reveal {
     opacity: 0;
@@ -4658,17 +4658,17 @@ textarea {
         opacity .8s ease,
         transform .8s cubic-bezier(.22, 1, .36, 1);
 }
-
+ 
 .elite-reveal.elite-visible {
     opacity: 1;
     transform: translateY(0);
 }
-
+ 
 /* Timeline interaction */
 .timeline-content.timeline-active {
     border-color: rgba(200, 232, 255, .4);
 }
-
+ 
 /* Reduced motion */
 .reduced-motion *,
 .reduced-motion *::before,
@@ -4677,12 +4677,12 @@ textarea {
     transition-duration: .01ms !important;
     scroll-behavior: auto !important;
 }
-
+ 
 /* ========================================================================
    ELITE MOTION & VISUAL REFINEMENT — ADDITIVE LAYER
    Appended enhancement layer. Original CSS above is retained.
    ======================================================================== */
-
+ 
 :root {
     --elite-ease: cubic-bezier(.22, 1, .36, 1);
     --elite-ease-soft: cubic-bezier(.16, 1, .3, 1);
@@ -4693,7 +4693,7 @@ textarea {
     --elite-surface: rgba(255, 255, 255, .045);
     --elite-shadow: 0 24px 80px rgba(0, 0, 0, .28);
 }
-
+ 
 /* Global rendering polish */
 html {
     scroll-padding-top: 100px;
@@ -4701,20 +4701,20 @@ html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-
+ 
 body {
     isolation: isolate;
 }
-
+ 
 ::selection {
     color: #fff;
     background: rgba(102, 140, 255, .72);
 }
-
+ 
 img {
     backface-visibility: hidden;
 }
-
+ 
 /* Ambient light: deliberately uses backgrounds rather than pseudo-elements,
    so existing ::before / ::after effects remain intact. */
 body {
@@ -4724,7 +4724,7 @@ body {
         radial-gradient(ellipse at 48% 96%, rgba(126, 211, 204, .045), transparent 38%);
     background-attachment: fixed;
 }
-
+ 
 /* Premium navigation refinement */
 .site-nav {
     transform: translateZ(0);
@@ -4734,36 +4734,36 @@ body {
         box-shadow .45s var(--elite-ease),
         padding .45s var(--elite-ease);
 }
-
+ 
 .site-nav.nav-scrolled {
     box-shadow: 0 12px 45px rgba(0, 0, 0, .22);
     border-color: rgba(255, 255, 255, .14);
 }
-
+ 
 .nav-center a {
     position: relative;
     transition: color .3s ease, opacity .3s ease;
 }
-
+ 
 .nav-center a::after {
     transform-origin: left center;
     transition: transform .4s var(--elite-ease), opacity .3s ease;
 }
-
+ 
 .nav-center a.active {
     color: var(--white, #fff);
 }
-
+ 
 /* Hero typography and entrance polish */
 .hero-name {
     text-wrap: balance;
     letter-spacing: -.055em;
 }
-
+ 
 .hero-description {
     text-wrap: pretty;
 }
-
+ 
 .hero-actions a,
 .hero-buttons a,
 .nav-contact,
@@ -4777,7 +4777,7 @@ body {
         border-color .35s ease,
         background-color .35s ease;
 }
-
+ 
 .hero-actions a:focus-visible,
 .hero-buttons a:focus-visible,
 .nav-contact:focus-visible,
@@ -4787,7 +4787,7 @@ body {
     outline: 2px solid rgba(160, 190, 255, .95);
     outline-offset: 4px;
 }
-
+ 
 /* A subtle animated sheen that does not consume pseudo-elements. */
 .hero-actions a,
 .hero-buttons a,
@@ -4798,7 +4798,7 @@ body {
     background-size: 220% 100%;
     background-position: 120% 0;
 }
-
+ 
 .hero-actions a:hover,
 .hero-buttons a:hover,
 .nav-contact:hover,
@@ -4806,22 +4806,22 @@ body {
     background-position: -120% 0;
     box-shadow: 0 14px 38px rgba(83, 119, 255, .18);
 }
-
+ 
 /* Portrait depth */
 .portrait-frame {
     transform-style: preserve-3d;
     isolation: isolate;
 }
-
+ 
 .portrait-frame img {
     transform: translateZ(18px);
     transition: transform .8s var(--elite-ease), filter .8s ease;
 }
-
+ 
 .portrait-frame:hover img {
     filter: saturate(1.06) contrast(1.025);
 }
-
+ 
 /* Card surfaces */
 .door,
 .project-showcase,
@@ -4835,7 +4835,7 @@ body {
         background-color .4s ease,
         transform .5s var(--elite-ease);
 }
-
+ 
 .door:hover,
 .project-showcase:hover,
 .certificate:hover,
@@ -4844,33 +4844,33 @@ body {
         0 24px 70px rgba(0, 0, 0, .24),
         0 0 34px var(--elite-cobalt-glow);
 }
-
+ 
 /* Project visual depth */
 .project-visual {
     isolation: isolate;
     overflow: hidden;
 }
-
+ 
 .project-visual img {
     transition: transform 1.1s var(--elite-ease), filter .8s ease;
     will-change: transform;
 }
-
+ 
 .project-showcase:hover .project-visual img {
     transform: scale(1.045);
     filter: saturate(1.08);
 }
-
+ 
 /* Certification cards: no proof buttons or fake verification affordances. */
 .certificate {
     position: relative;
     overflow: hidden;
 }
-
+ 
 .certificate:hover {
     border-color: rgba(180, 195, 255, .34);
 }
-
+ 
 /* Timeline visual progression */
 .timeline-content {
     transition:
@@ -4879,17 +4879,17 @@ body {
         transform .5s var(--elite-ease),
         box-shadow .5s var(--elite-ease);
 }
-
+ 
 .timeline-content.timeline-active {
     transform: translateY(-3px);
 }
-
+ 
 /* Scroll progress polish */
 .scroll-progress {
     transform-origin: left center;
     box-shadow: 0 0 14px rgba(115, 151, 255, .5);
 }
-
+ 
 /* Ambient spotlight driven by JS pointer coordinates */
 [data-elite-spotlight] {
     --spot-x: 50%;
@@ -4902,14 +4902,14 @@ body {
         ),
         var(--card-background, none);
 }
-
+ 
 /* Scroll reveal enhancement class is only applied by JS.
    Content remains visible if scripts fail to load. */
 .js-motion-ready .motion-reveal {
     opacity: 0;
     transform: translate3d(0, 28px, 0);
 }
-
+ 
 .js-motion-ready .motion-reveal.is-motion-visible {
     opacity: 1;
     transform: translate3d(0, 0, 0);
@@ -4917,67 +4917,67 @@ body {
         opacity .85s var(--elite-ease),
         transform .85s var(--elite-ease);
 }
-
+ 
 /* Text line highlight */
 .section-heading,
 .section-title,
 .section-subtitle {
     text-wrap: balance;
 }
-
+ 
 /* Mobile menu open-state polish */
 @media (max-width: 768px) {
     .nav-center.menu-visible {
         animation: eliteMenuIn .42s var(--elite-ease) both;
     }
-
+ 
     .nav-center.menu-visible a {
         animation: eliteMenuLinkIn .48s var(--elite-ease) both;
     }
-
+ 
     .nav-center.menu-visible a:nth-child(2) { animation-delay: .035s; }
     .nav-center.menu-visible a:nth-child(3) { animation-delay: .07s; }
     .nav-center.menu-visible a:nth-child(4) { animation-delay: .105s; }
     .nav-center.menu-visible a:nth-child(5) { animation-delay: .14s; }
     .nav-center.menu-visible a:nth-child(6) { animation-delay: .175s; }
-
+ 
     .door:hover,
     .project-showcase:hover,
     .certificate:hover {
         transform: none;
     }
-
+ 
     .project-visual img {
         will-change: auto;
     }
 }
-
+ 
 @keyframes eliteMenuIn {
     from { opacity: 0; transform: translateY(-10px) scale(.985); }
     to { opacity: 1; transform: translateY(0) scale(1); }
 }
-
+ 
 @keyframes eliteMenuLinkIn {
     from { opacity: 0; transform: translateY(8px); }
     to { opacity: 1; transform: translateY(0); }
 }
-
+ 
 /* Responsive spacing and motion restraint */
 @media (max-width: 576px) {
     .hero-name {
         letter-spacing: -.04em;
     }
-
+ 
     .hero-actions,
     .hero-buttons {
         gap: 12px;
     }
-
+ 
     .portrait-frame img {
         transform: none;
     }
 }
-
+ 
 /* Keyboard users receive the same clear interaction affordances. */
 @media (hover: none) {
     .hero-actions a:hover,
@@ -4988,13 +4988,13 @@ body {
         box-shadow: none;
     }
 }
-
+ 
 /* Reduced motion: disable non-essential motion comprehensively. */
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto !important;
     }
-
+ 
     *,
     *::before,
     *::after {
@@ -5003,18 +5003,18 @@ body {
         transition-duration: .01ms !important;
         scroll-behavior: auto !important;
     }
-
+ 
     .js-motion-ready .motion-reveal {
         opacity: 1 !important;
         transform: none !important;
     }
 }
-
+ 
 /* ========================================================================
    HTML STRUCTURE ALIGNMENT PATCH — KALLU VAISHNAVI
    Preserves the existing design system while styling the actual HTML classes.
    ======================================================================== */
-
+ 
 /* ---------- Navigation: correct desktop alignment ---------- */
 .site-nav {
     left: 50%;
@@ -5027,12 +5027,12 @@ body {
     transform: translateX(-50%);
     z-index: 1000;
 }
-
+ 
 .site-nav > .container-fluid {
     width: 100%;
     padding: 0;
 }
-
+ 
 .nav-inner {
     width: 100%;
     min-height: 76px;
@@ -5042,7 +5042,7 @@ body {
     gap: clamp(16px, 2.2vw, 34px);
     padding: 14px 24px;
 }
-
+ 
 .logo {
     flex: 0 0 auto;
     white-space: nowrap;
@@ -5051,7 +5051,7 @@ body {
     font-size: clamp(17px, 1.45vw, 23px);
     letter-spacing: -.055em;
 }
-
+ 
 .nav-center {
     display: flex;
     align-items: center;
@@ -5060,29 +5060,29 @@ body {
     min-width: 0;
     gap: clamp(13px, 1.8vw, 28px);
 }
-
+ 
 .nav-center a {
     white-space: nowrap;
     font-size: 12px;
 }
-
+ 
 .nav-contact {
     flex: 0 0 auto;
     white-space: nowrap;
     margin: 0;
 }
-
+ 
 .mobile-menu {
     display: none;
     flex: 0 0 auto;
 }
-
+ 
 /* ---------- Consistent section heading system ---------- */
 .section-padding {
     padding-top: clamp(88px, 9vw, 145px);
     padding-bottom: clamp(88px, 9vw, 145px);
 }
-
+ 
 .section-label {
     display: inline-flex;
     align-items: center;
@@ -5094,7 +5094,7 @@ body {
     letter-spacing: .18em;
     text-transform: uppercase;
 }
-
+ 
 .section-heading {
     max-width: 900px;
     margin: 0 0 20px;
@@ -5105,11 +5105,11 @@ body {
     letter-spacing: -.055em;
     text-wrap: balance;
 }
-
+ 
 .section-heading span {
     color: var(--elite-ice, #c8e8ff);
 }
-
+ 
 .section-description {
     max-width: 680px;
     margin: 0 0 46px;
@@ -5117,7 +5117,7 @@ body {
     font-size: clamp(14px, 1.2vw, 16px);
     line-height: 1.85;
 }
-
+ 
 /* ---------- Education: restore the missing card layout ---------- */
 .education {
     position: relative;
@@ -5126,7 +5126,7 @@ body {
         radial-gradient(ellipse at 90% 15%, rgba(102, 140, 255, .075), transparent 38%),
         var(--obsidian, #080b14);
 }
-
+ 
 .education-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -5134,7 +5134,7 @@ body {
     align-items: stretch;
     margin-top: 48px;
 }
-
+ 
 .education-card {
     position: relative;
     display: flex;
@@ -5153,7 +5153,7 @@ body {
     box-shadow: 0 22px 60px rgba(0,0,0,.2), inset 0 1px 0 rgba(255,255,255,.07);
     transition: transform .55s var(--elite-ease), border-color .4s ease, box-shadow .55s ease;
 }
-
+ 
 .education-card::before {
     content: "";
     position: absolute;
@@ -5163,13 +5163,13 @@ body {
     background: linear-gradient(90deg, transparent, var(--elite-ice), transparent);
     opacity: .7;
 }
-
+ 
 .education-card:hover {
     transform: translateY(-8px);
     border-color: rgba(174,198,255,.38);
     box-shadow: 0 30px 75px rgba(0,0,0,.3), 0 0 34px rgba(102,140,255,.12);
 }
-
+ 
 .education-card-top {
     display: flex;
     align-items: center;
@@ -5177,7 +5177,7 @@ body {
     gap: 12px;
     margin-bottom: 30px;
 }
-
+ 
 .education-icon {
     display: grid;
     place-items: center;
@@ -5190,14 +5190,14 @@ body {
     background: rgba(120,155,255,.12);
     font-size: 20px;
 }
-
+ 
 .education-period {
     color: #c5cde0;
     font-size: 11px;
     font-weight: 600;
     letter-spacing: .06em;
 }
-
+ 
 .education-level {
     margin-bottom: 12px;
     color: var(--elite-ice, #c8e8ff);
@@ -5205,7 +5205,7 @@ body {
     font-weight: 700;
     letter-spacing: .16em;
 }
-
+ 
 .education-card h3 {
     margin: 0 0 9px;
     color: #fff;
@@ -5215,7 +5215,7 @@ body {
     line-height: 1.2;
     letter-spacing: -.035em;
 }
-
+ 
 .education-card h4 {
     margin: 0 0 14px;
     color: #d8deed;
@@ -5223,14 +5223,14 @@ body {
     font-weight: 500;
     line-height: 1.55;
 }
-
+ 
 .education-card > p {
     margin: 0 0 25px;
     color: var(--muted, #9da6ba);
     font-size: 13px;
     line-height: 1.7;
 }
-
+ 
 .education-score {
     display: flex;
     align-items: center;
@@ -5241,12 +5241,12 @@ body {
     color: #cbd4e8;
     font-size: 12px;
 }
-
+ 
 .education-score strong {
     color: #fff;
     font-size: 14px;
 }
-
+ 
 /* ---------- Skills: use the real .skills-grid and direct child markup ---------- */
 .skills-grid {
     display: grid;
@@ -5256,7 +5256,7 @@ body {
     perspective: 1400px;
     margin-top: 46px;
 }
-
+ 
 .skills-grid > .door {
     width: 100%;
     height: auto;
@@ -5270,23 +5270,23 @@ body {
     text-align: left;
     isolation: isolate;
 }
-
+ 
 .skills-grid > .door::before {
     inset: 9px;
     border-radius: 17px;
 }
-
+ 
 .skills-grid > .door::after {
     pointer-events: none;
     z-index: 0;
 }
-
+ 
 .skills-grid > .door > * {
     position: relative;
     z-index: 1;
     transform: none;
 }
-
+ 
 .skills-grid .door-number {
     position: absolute;
     top: 29px;
@@ -5297,7 +5297,7 @@ body {
     font-size: 10px;
     letter-spacing: .15em;
 }
-
+ 
 .skills-grid .door-icon {
     display: grid;
     place-items: center;
@@ -5310,7 +5310,7 @@ body {
     background: rgba(110,145,255,.12);
     font-size: 21px;
 }
-
+ 
 .skills-grid .door h3 {
     margin: 0 0 12px;
     color: #fff;
@@ -5319,14 +5319,14 @@ body {
     font-weight: 600;
     line-height: 1.25;
 }
-
+ 
 .skills-grid .door > p {
     margin: 0 0 20px;
     color: #aeb8cc;
     font-size: 13px;
     line-height: 1.75;
 }
-
+ 
 .skill-tags {
     display: flex;
     flex-wrap: wrap;
@@ -5335,7 +5335,7 @@ body {
     width: 100%;
     margin-top: auto;
 }
-
+ 
 .skill-tags span {
     display: inline-flex;
     align-items: center;
@@ -5349,7 +5349,7 @@ body {
     line-height: 1.35;
     overflow-wrap: anywhere;
 }
-
+ 
 /* ---------- Projects: grid cards match actual markup ---------- */
 .projects-grid {
     display: grid;
@@ -5358,7 +5358,7 @@ body {
     align-items: stretch;
     margin-top: 48px;
 }
-
+ 
 .projects-grid .project-showcase {
     display: flex;
     flex-direction: column;
@@ -5369,7 +5369,7 @@ body {
     background: linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.015));
     box-shadow: 0 20px 60px rgba(0,0,0,.2);
 }
-
+ 
 .projects-grid .project-visual {
     position: relative;
     display: flex;
@@ -5379,13 +5379,13 @@ body {
     overflow: hidden;
     border-radius: 0;
 }
-
+ 
 .project-visual-content {
     position: relative;
     z-index: 2;
     width: 100%;
 }
-
+ 
 .project-index,
 .project-category {
     display: inline-block;
@@ -5394,14 +5394,14 @@ body {
     font-weight: 700;
     letter-spacing: .16em;
 }
-
+ 
 .project-main-icon {
     display: block;
     margin: 25px 0 15px;
     color: rgba(230,238,255,.9);
     font-size: 34px;
 }
-
+ 
 .project-visual-content h3 {
     margin: 0 0 8px;
     color: #fff;
@@ -5409,19 +5409,19 @@ body {
     font-size: clamp(23px, 2.5vw, 32px);
     font-weight: 600;
 }
-
+ 
 .project-visual-content p {
     color: #c0c9dc;
     font-size: 13px;
 }
-
+ 
 .project-visual-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
     margin-top: 20px;
 }
-
+ 
 .project-visual-tags span {
     padding: 7px 10px;
     border: 1px solid rgba(255,255,255,.18);
@@ -5430,19 +5430,19 @@ body {
     background: rgba(8,12,24,.2);
     font-size: 9px;
 }
-
+ 
 .project-querygenie {
     background: radial-gradient(circle at 80% 15%, rgba(110,150,255,.4), transparent 45%), linear-gradient(135deg,#1b2a49,#0b1020);
 }
-
+ 
 .project-bookrental {
     background: radial-gradient(circle at 80% 15%, rgba(190,150,255,.35), transparent 45%), linear-gradient(135deg,#302342,#11101c);
 }
-
+ 
 .project-serverless {
     background: radial-gradient(circle at 80% 15%, rgba(120,220,205,.28), transparent 45%), linear-gradient(135deg,#173b40,#0b151d);
 }
-
+ 
 .project-details {
     display: flex;
     flex-direction: column;
@@ -5450,56 +5450,56 @@ body {
     flex: 1;
     padding: 28px 30px 32px;
 }
-
+ 
 .project-details h3 {
     margin: 13px 0 12px;
     color: #fff;
     font-size: 21px;
     line-height: 1.3;
 }
-
+ 
 .project-details > p {
     color: #aeb8ca;
     font-size: 13px;
     line-height: 1.8;
 }
-
+ 
 .project-detail-block {
     width: 100%;
     margin-top: 14px;
 }
-
+ 
 .project-detail-block h4 {
     margin-bottom: 12px;
     color: #e9efff;
     font-size: 12px;
     font-weight: 700;
 }
-
+ 
 .project-detail-block ul {
     padding-left: 18px;
     color: #aeb8ca;
     font-size: 12px;
     line-height: 1.8;
 }
-
+ 
 .project-detail-block li {
     margin-bottom: 7px;
 }
-
+ 
 /* ---------- Experience timeline: actual article markup ---------- */
 .timeline {
     max-width: 100%;
     margin: 45px 0 0;
     padding: 0 0 0 28px;
 }
-
+ 
 .timeline::before {
     left: 7px;
     width: 1px;
     background: linear-gradient(to bottom, rgba(150,180,255,.75), rgba(255,255,255,.06));
 }
-
+ 
 .timeline-content {
     position: relative;
     display: block;
@@ -5509,7 +5509,7 @@ body {
     border-radius: 22px;
     background: linear-gradient(145deg, rgba(255,255,255,.06), rgba(255,255,255,.018));
 }
-
+ 
 .timeline-content::before {
     content: "";
     position: absolute;
@@ -5522,7 +5522,7 @@ body {
     background: #111827;
     box-shadow: 0 0 18px rgba(130,165,255,.55);
 }
-
+ 
 .timeline-date {
     display: block;
     margin-bottom: 16px;
@@ -5531,31 +5531,31 @@ body {
     font-weight: 700;
     letter-spacing: .14em;
 }
-
+ 
 .timeline-body {
     min-width: 0;
 }
-
+ 
 .timeline-type {
     color: #b8c9ee;
     font-size: 9px;
     font-weight: 700;
     letter-spacing: .15em;
 }
-
+ 
 .timeline-body h3 {
     margin: 10px 0 5px;
     color: #fff;
     font-family: var(--heading, "Space Grotesk", sans-serif);
     font-size: 24px;
 }
-
+ 
 .timeline-body h4 {
     margin: 0 0 12px;
     color: #d4dced;
     font-size: 15px;
 }
-
+ 
 .timeline-location {
     display: inline-flex;
     align-items: center;
@@ -5563,18 +5563,18 @@ body {
     color: #aab5c9;
     font-size: 11px;
 }
-
+ 
 .experience-description {
     margin-top: 20px;
     color: #aeb8ca;
     font-size: 13px;
     line-height: 1.8;
 }
-
+ 
 .experience-description ul {
     padding-left: 18px;
 }
-
+ 
 /* ---------- Certifications: actual grid and card structure ---------- */
 .certifications-grid {
     display: grid;
@@ -5582,13 +5582,13 @@ body {
     gap: 20px;
     margin-top: 45px;
 }
-
+ 
 .certifications-grid .certificate {
     min-width: 0;
     min-height: 230px;
     padding: 30px;
 }
-
+ 
 .certificate-icon {
     display: grid;
     place-items: center;
@@ -5601,7 +5601,7 @@ body {
     background: rgba(110,145,255,.12);
     font-size: 21px;
 }
-
+ 
 .certificate-year,
 .certificate-category {
     display: block;
@@ -5611,33 +5611,33 @@ body {
     font-weight: 700;
     letter-spacing: .13em;
 }
-
+ 
 .certificate h3 {
     margin: 12px 0 9px;
     color: #fff;
     font-size: 19px;
     line-height: 1.35;
 }
-
+ 
 .certificate p {
     margin: 0;
     color: #aeb8ca;
     font-size: 12px;
 }
-
+ 
 /* ---------- Contact and footer ---------- */
 .contact-content {
     max-width: 900px;
     margin: 0 auto;
 }
-
+ 
 .contact-eyebrow {
     color: var(--elite-ice, #c8e8ff);
     font-size: 10px;
     font-weight: 700;
     letter-spacing: .18em;
 }
-
+ 
 .contact-content h2 {
     margin: 20px 0;
     color: #fff;
@@ -5647,18 +5647,18 @@ body {
     line-height: 1.05;
     letter-spacing: -.055em;
 }
-
+ 
 .contact-content h2 span {
     color: var(--elite-ice, #c8e8ff);
 }
-
+ 
 .contact-description {
     max-width: 600px;
     margin: 0 auto 30px;
     color: #aeb8ca;
     line-height: 1.8;
 }
-
+ 
 .contact-details {
     display: flex;
     flex-wrap: wrap;
@@ -5666,7 +5666,7 @@ body {
     gap: 14px 24px;
     margin-top: 45px;
 }
-
+ 
 .contact-details a,
 .contact-location {
     display: inline-flex;
@@ -5675,13 +5675,13 @@ body {
     color: #c4ccdc;
     font-size: 12px;
 }
-
+ 
 .site-footer {
     padding: 45px 0 25px;
     border-top: 1px solid rgba(255,255,255,.09);
     background: #06080e;
 }
-
+ 
 .footer-content {
     display: flex;
     flex-wrap: wrap;
@@ -5689,33 +5689,33 @@ body {
     justify-content: space-between;
     gap: 22px;
 }
-
+ 
 .footer-logo {
     color: #fff;
     font-weight: 800;
     letter-spacing: -.04em;
 }
-
+ 
 .footer-logo span {
     color: var(--elite-blue, #668cff);
 }
-
+ 
 .footer-content > p {
     margin: 0;
     color: #929db2;
     font-size: 12px;
 }
-
+ 
 .footer-socials {
     display: flex;
     gap: 14px;
 }
-
+ 
 .footer-socials a {
     color: #dce5f7;
     font-size: 17px;
 }
-
+ 
 .footer-bottom {
     display: flex;
     justify-content: space-between;
@@ -5726,32 +5726,32 @@ body {
     color: #8994a9;
     font-size: 11px;
 }
-
+ 
 .footer-bottom a {
     color: #dce5f7;
 }
-
+ 
 /* ---------- Mobile and tablet layout ---------- */
 @media (max-width: 1100px) {
     .nav-inner {
         gap: 16px;
         padding-inline: 18px;
     }
-
+ 
     .nav-center {
         gap: 13px;
     }
-
+ 
     .nav-center a {
         font-size: 11px;
     }
-
+ 
     .education-grid,
     .skills-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
-
+ 
 @media (max-width: 768px) {
     .site-nav {
         top: 12px;
@@ -5759,16 +5759,16 @@ body {
         min-height: 62px;
         height: auto;
     }
-
+ 
     .nav-inner {
         min-height: 62px;
         padding: 10px 16px;
     }
-
+ 
     .logo {
         font-size: 17px;
     }
-
+ 
     .mobile-menu {
         display: inline-grid;
         place-items: center;
@@ -5780,11 +5780,11 @@ body {
         background: rgba(255,255,255,.06);
         font-size: 22px;
     }
-
+ 
     .nav-contact {
         display: none;
     }
-
+ 
     .nav-center,
     .nav-center.menu-visible {
         position: absolute;
@@ -5803,90 +5803,90 @@ body {
         backdrop-filter: blur(24px);
         box-shadow: 0 22px 60px rgba(0,0,0,.4);
     }
-
+ 
     .nav-center.menu-visible {
         display: flex !important;
     }
-
+ 
     .nav-center a {
         padding: 13px 0;
         border-bottom: 1px solid rgba(255,255,255,.07);
         font-size: 13px;
     }
-
+ 
     .education-grid,
     .skills-grid,
     .projects-grid,
     .certifications-grid {
         grid-template-columns: 1fr;
     }
-
+ 
     .education-card {
         min-height: 290px;
     }
-
+ 
     .skills-grid > .door {
         min-height: 260px;
     }
-
+ 
     .projects-grid .project-visual {
         min-height: 220px;
     }
-
+ 
     .timeline {
         padding-left: 22px;
     }
-
+ 
     .timeline-content {
         padding: 24px 20px;
     }
-
+ 
     .timeline-content::before {
         left: -22px;
     }
-
+ 
     .footer-content {
         align-items: flex-start;
         flex-direction: column;
     }
 }
-
+ 
 @media (max-width: 480px) {
     .section-padding {
         padding-top: 78px;
         padding-bottom: 78px;
     }
-
+ 
     .section-heading {
         font-size: clamp(37px, 11vw, 52px);
     }
-
+ 
     .education-card,
     .skills-grid > .door,
     .certifications-grid .certificate {
         padding: 24px 21px;
     }
-
+ 
     .project-details {
         padding: 24px 21px;
     }
-
+ 
     .contact-details {
         align-items: flex-start;
         flex-direction: column;
     }
-
+ 
     .footer-bottom {
         flex-direction: column;
     }
 }
-
+ 
 /* Prevent layout shifts and preserve native cursor behavior. */
 html, body {
     max-width: 100%;
     overflow-x: clip;
 }
-
+ 
 @media (prefers-reduced-motion: reduce) {
     .education-card,
     .skills-grid > .door,
@@ -5897,12 +5897,12 @@ html, body {
         transform: none !important;
     }
 }
-
+ 
 /* ========================================================================
    HERO PORTRAIT CAPTIONS — ALIGNMENT FIX
    Keeps both floating information chips inside the portrait column.
    ======================================================================== */
-
+ 
 .hero-visual {
     position: relative;
     width: 100%;
@@ -5916,7 +5916,7 @@ html, body {
     padding-bottom: 4px;
     overflow: visible;
 }
-
+ 
 .hero-visual .portrait-frame {
     grid-column: 1 / -1;
     grid-row: 1;
@@ -5924,7 +5924,7 @@ html, body {
     min-width: 0;
     margin: 0;
 }
-
+ 
 .hero-visual .portrait-frame img {
     display: block;
     width: 100%;
@@ -5932,7 +5932,7 @@ html, body {
     max-width: 100%;
     object-fit: cover;
 }
-
+ 
 /* Reset older absolute positioning that pushed the caption outside the photo. */
 .hero-visual .floating-caption,
 .hero-visual .floating-tech-card {
@@ -5968,7 +5968,7 @@ html, body {
     white-space: normal;
     text-align: center;
 }
-
+ 
 .hero-visual .floating-caption {
     grid-column: 2;
     grid-row: 2;
@@ -5979,11 +5979,11 @@ html, body {
     color: #e7edff;
     animation: floatingCaption 5s ease-in-out infinite;
 }
-
+ 
 .hero-visual .floating-caption .caption-dot {
     flex: 0 0 7px;
 }
-
+ 
 .hero-visual .floating-tech-card {
     grid-column: 1;
     grid-row: 2;
@@ -5993,7 +5993,7 @@ html, body {
     gap: 5px;
     text-align: left;
 }
-
+ 
 .hero-visual .floating-tech-card span {
     display: block;
     color: #aebbd8;
@@ -6002,7 +6002,7 @@ html, body {
     letter-spacing: .13em;
     line-height: 1.4;
 }
-
+ 
 .hero-visual .floating-tech-card strong {
     display: block;
     max-width: 100%;
@@ -6012,20 +6012,20 @@ html, body {
     line-height: 1.35;
     overflow-wrap: anywhere;
 }
-
+ 
 /* Tablet: retain the two aligned information chips below the portrait. */
 @media (max-width: 991px) {
     .hero-visual {
         width: min(100%, 520px);
         margin: 38px auto 0;
     }
-
+ 
     .hero-visual .floating-caption,
     .hero-visual .floating-tech-card {
         min-height: 50px;
     }
 }
-
+ 
 /* Small phones: stack chips to prevent clipping or cramped text. */
 @media (max-width: 480px) {
     .hero-visual {
@@ -6033,11 +6033,11 @@ html, body {
         row-gap: 10px;
         width: min(100%, 390px);
     }
-
+ 
     .hero-visual .portrait-frame {
         grid-column: 1;
     }
-
+ 
     .hero-visual .floating-tech-card,
     .hero-visual .floating-caption {
         grid-column: 1;
@@ -6045,29 +6045,29 @@ html, body {
         width: 100%;
         min-height: 48px;
     }
-
+ 
     .hero-visual .floating-tech-card {
         align-items: center;
         text-align: center;
     }
-
+ 
     .hero-visual .floating-caption {
         animation: none;
     }
 }
-
+ 
 @media (prefers-reduced-motion: reduce) {
     .hero-visual .floating-caption {
         animation: none !important;
     }
 }
-
+ 
 /* ========================================================================
    SIGNATURE MOTION SYSTEM — PASTEL LIQUID GLASS
    A restrained motion layer designed for smooth, premium interactions.
    Existing layout and content rules above remain intact.
    ======================================================================== */
-
+ 
 :root {
     --motion-lilac: #c9b8ff;
     --motion-ice: #b9e5ff;
@@ -6080,7 +6080,7 @@ html, body {
     --motion-soft: cubic-bezier(.22, .68, 0, 1);
     --motion-glass-border: rgba(224, 232, 255, .18);
 }
-
+ 
 /* Soft pastel atmosphere without image assets or extra markup. */
 body {
     background-image:
@@ -6090,7 +6090,7 @@ body {
         radial-gradient(ellipse at 18% 88%, rgba(185,240,223,.045), transparent 30%);
     background-attachment: fixed;
 }
-
+ 
 .hero,
 .about,
 .education,
@@ -6102,13 +6102,13 @@ body {
     position: relative;
     isolation: isolate;
 }
-
+ 
 /* Pastel highlight accents across section labels. */
 .section-label {
     color: var(--motion-ice);
     text-shadow: 0 0 22px rgba(185,229,255,.16);
 }
-
+ 
 .section-label::before {
     content: "";
     width: 7px;
@@ -6118,7 +6118,7 @@ body {
     background: linear-gradient(135deg, var(--motion-ice), var(--motion-lilac));
     box-shadow: 0 0 16px rgba(185,229,255,.55);
 }
-
+ 
 .section-heading span,
 .contact-content h2 span {
     background: linear-gradient(
@@ -6135,27 +6135,27 @@ body {
     background-size: 220% auto;
     animation: pastelTextDrift 12s ease-in-out infinite alternate;
 }
-
+ 
 @keyframes pastelTextDrift {
     from { background-position: 0% 50%; }
     to { background-position: 100% 50%; }
 }
-
+ 
 /* Hero: soft cinematic light, not a distracting moving background. */
 .hero {
     background-image:
         radial-gradient(ellipse at 78% 42%, rgba(158,188,255,.11), transparent 34%),
         radial-gradient(ellipse at 28% 80%, rgba(201,184,255,.055), transparent 35%);
 }
-
+ 
 .hero-name {
     text-shadow: 0 12px 50px rgba(185,229,255,.055);
 }
-
+ 
 .hero-role {
     text-wrap: balance;
 }
-
+ 
 .hero-visual .portrait-frame {
     transform-style: preserve-3d;
     box-shadow:
@@ -6163,16 +6163,16 @@ body {
         0 0 0 1px rgba(185,229,255,.12),
         0 0 55px rgba(158,188,255,.09);
 }
-
+ 
 .hero-visual .portrait-frame img {
     transform: translateZ(0);
     transition: filter .8s var(--motion-spring), transform 1.1s var(--motion-spring);
 }
-
+ 
 .hero-visual:hover .portrait-frame img {
     filter: saturate(1.055) contrast(1.025);
 }
-
+ 
 .hero-visual .floating-caption,
 .hero-visual .floating-tech-card {
     border-color: var(--motion-glass-border);
@@ -6185,19 +6185,19 @@ body {
         border-color .45s ease,
         box-shadow .55s ease;
 }
-
+ 
 .hero-visual .floating-tech-card:hover,
 .hero-visual .floating-caption:hover {
     transform: translateY(-4px);
     border-color: rgba(201,184,255,.42);
     box-shadow: 0 22px 54px rgba(0,0,0,.32), 0 0 28px rgba(201,184,255,.1);
 }
-
+ 
 .hero-visual .caption-dot,
 .availability-dot {
     box-shadow: 0 0 0 5px rgba(185,240,223,.08), 0 0 18px rgba(185,240,223,.65);
 }
-
+ 
 /* Elegant button light sweep and press feedback. */
 .hero-buttons a,
 .nav-contact,
@@ -6211,7 +6211,7 @@ body {
         border-color .35s ease,
         background-color .35s ease;
 }
-
+ 
 .hero-buttons a::after,
 .nav-contact::after,
 .contact-button::after {
@@ -6227,19 +6227,19 @@ body {
     transition: transform .85s var(--motion-spring);
     pointer-events: none;
 }
-
+ 
 .hero-buttons a:hover::after,
 .nav-contact:hover::after,
 .contact-button:hover::after {
     transform: rotate(24deg) translateX(650%);
 }
-
+ 
 .hero-buttons a:active,
 .nav-contact:active,
 .contact-button:active {
     transform: scale(.975);
 }
-
+ 
 /* Cards: multi-tone pastel edge, glass depth and crisp hover. */
 .education-card,
 .skills-grid > .door,
@@ -6257,7 +6257,7 @@ body {
         background-color .45s ease;
     will-change: transform;
 }
-
+ 
 .education-card:hover,
 .skills-grid > .door:hover,
 .projects-grid .project-showcase:hover,
@@ -6269,13 +6269,13 @@ body {
         0 0 34px rgba(158,188,255,.105),
         inset 0 1px 0 rgba(255,255,255,.1);
 }
-
+ 
 /* Small pastel index accents across cards. */
 .education-icon { color: var(--motion-ice); }
 .skills-grid .door-icon { color: var(--motion-lilac); }
 .certificate-icon { color: var(--motion-mint); }
 .project-main-icon { filter: drop-shadow(0 8px 18px rgba(201,184,255,.22)); }
-
+ 
 .skill-tags span,
 .project-tech span,
 .project-visual-tags span {
@@ -6285,7 +6285,7 @@ body {
         background-color .3s ease,
         transform .4s var(--motion-spring);
 }
-
+ 
 .skill-tags span:hover,
 .project-tech span:hover,
 .project-visual-tags span:hover {
@@ -6294,7 +6294,7 @@ body {
     border-color: rgba(185,229,255,.42);
     background: rgba(185,229,255,.1);
 }
-
+ 
 /* Project visual art direction: distinct pastel atmospheres per project. */
 .project-querygenie {
     background:
@@ -6302,86 +6302,86 @@ body {
         radial-gradient(circle at 15% 90%, rgba(201,184,255,.18), transparent 45%),
         linear-gradient(135deg, #1b2b48, #0b1020);
 }
-
+ 
 .project-bookrental {
     background:
         radial-gradient(circle at 82% 18%, rgba(255,197,220,.22), transparent 42%),
         radial-gradient(circle at 12% 90%, rgba(201,184,255,.2), transparent 45%),
         linear-gradient(135deg, #302342, #11101c);
 }
-
+ 
 .project-serverless {
     background:
         radial-gradient(circle at 80% 18%, rgba(185,240,223,.22), transparent 42%),
         radial-gradient(circle at 15% 90%, rgba(255,232,168,.12), transparent 45%),
         linear-gradient(135deg, #173b40, #0b151d);
 }
-
+ 
 .projects-grid .project-visual {
     transition: filter .6s ease;
 }
-
+ 
 .projects-grid .project-showcase:hover .project-visual {
     filter: saturate(1.13) brightness(1.06);
 }
-
+ 
 /* Timeline marker glow pulse is slow and low amplitude. */
 .timeline-content::before {
     animation: timelineBeacon 4.8s ease-in-out infinite;
 }
-
+ 
 @keyframes timelineBeacon {
     0%, 100% { box-shadow: 0 0 0 0 rgba(185,229,255,.05), 0 0 12px rgba(185,229,255,.28); }
     50% { box-shadow: 0 0 0 7px rgba(185,229,255,.035), 0 0 20px rgba(185,229,255,.48); }
 }
-
+ 
 /* Navigation active state gets a soft pastel underline. */
 .nav-center a.active {
     color: #fff;
     text-shadow: 0 0 18px rgba(185,229,255,.18);
 }
-
+ 
 .nav-center a.active::after {
     background: linear-gradient(90deg, var(--motion-ice), var(--motion-lilac), var(--motion-rose));
     box-shadow: 0 0 12px rgba(185,229,255,.35);
 }
-
+ 
 /* Scroll progress is a thin luminous pastel gradient. */
 .scroll-progress {
     background: linear-gradient(90deg, var(--motion-ice), var(--motion-lilac), var(--motion-rose), var(--motion-mint));
     box-shadow: 0 0 16px rgba(185,229,255,.42);
 }
-
+ 
 /* Footer and contact details micro-interactions. */
 .contact-details a,
 .footer-socials a,
 .footer-bottom a {
     transition: color .3s ease, transform .4s var(--motion-spring);
 }
-
+ 
 .contact-details a:hover,
 .footer-socials a:hover,
 .footer-bottom a:hover {
     color: var(--motion-ice);
     transform: translateY(-3px);
 }
-
+ 
 /* Motion utility classes controlled by JavaScript. */
 .motion-ready .motion-fade-up {
     opacity: 0;
     transform: translate3d(0, 34px, 0);
 }
-
+ 
 .motion-ready .motion-fade-up.motion-in {
     opacity: 1;
     transform: translate3d(0, 0, 0);
     transition: opacity .9s var(--motion-spring), transform .9s var(--motion-spring);
 }
-
+ 
 /* Keep mobile smooth and battery-conscious. */
 @media (max-width: 768px) {
     body { background-attachment: scroll; }
-
+ 
     .education-card,
     .skills-grid > .door,
     .projects-grid .project-showcase,
@@ -6389,12 +6389,12 @@ body {
     .timeline-content {
         will-change: auto;
     }
-
+ 
     .timeline-content::before {
         animation: none;
     }
 }
-
+ 
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -6404,47 +6404,47 @@ body {
         transition-duration: .01ms !important;
         scroll-behavior: auto !important;
     }
-
+ 
     .motion-ready .motion-fade-up {
         opacity: 1 !important;
         transform: none !important;
     }
 }
-
+ 
 /* ========================================================================
    HERO OVERFLOW + ACTION ALIGNMENT HOTFIX
    Fixes horizontal clipping and keeps hero content inside its grid column.
    ======================================================================== */
-
+ 
 .hero {
     width: 100%;
     max-width: 100%;
     overflow: clip;
 }
-
+ 
 .hero > .container {
     width: 100%;
     max-width: 1240px;
     margin-inline: auto;
 }
-
+ 
 .hero .row {
     width: 100%;
     margin-inline: 0;
     align-items: center;
 }
-
+ 
 .hero .row > [class*="col-"] {
     min-width: 0;
 }
-
+ 
 .hero-content {
     width: 100%;
     max-width: 680px;
     min-width: 0;
     margin-inline: 0;
 }
-
+ 
 .hero-intro,
 .hero-role,
 .hero-description,
@@ -6452,24 +6452,24 @@ body {
     max-width: 100%;
     overflow-wrap: anywhere;
 }
-
+ 
 .hero-name {
     max-width: 100%;
     overflow-wrap: normal;
     word-break: normal;
 }
-
+ 
 .hero-role {
     line-height: 1.35;
     text-wrap: balance;
 }
-
+ 
 .hero-description {
     width: 100%;
     max-width: 640px;
     line-height: 1.85;
 }
-
+ 
 .hero-buttons {
     display: flex;
     flex-wrap: wrap;
@@ -6478,7 +6478,7 @@ body {
     width: 100%;
     max-width: 100%;
 }
-
+ 
 .hero-buttons > a {
     display: inline-flex;
     flex: 0 1 auto;
@@ -6491,7 +6491,7 @@ body {
     line-height: 1.35;
     text-align: center;
 }
-
+ 
 .hero-socials {
     display: flex;
     flex-wrap: wrap;
@@ -6500,7 +6500,7 @@ body {
     width: 100%;
     max-width: 100%;
 }
-
+ 
 .hero-location {
     display: flex;
     flex-wrap: wrap;
@@ -6508,85 +6508,85 @@ body {
     gap: 8px;
     line-height: 1.5;
 }
-
+ 
 .hero-visual,
 .hero-visual * {
     min-width: 0;
 }
-
+ 
 @media (min-width: 992px) {
     .hero .row {
         --bs-gutter-x: clamp(28px, 5vw, 76px);
     }
-
+ 
     .hero .row > .col-lg-7 {
         flex: 0 0 58.333333%;
         max-width: 58.333333%;
     }
-
+ 
     .hero .row > .col-lg-5 {
         flex: 0 0 41.666667%;
         max-width: 41.666667%;
     }
 }
-
+ 
 @media (max-width: 991.98px) {
     .hero {
         overflow: hidden;
     }
-
+ 
     .hero .row {
         min-height: auto !important;
         padding-top: 130px;
         padding-bottom: 70px;
         row-gap: 38px;
     }
-
+ 
     .hero-content {
         max-width: 760px;
     }
-
+ 
     .hero-visual {
         margin-inline: auto;
     }
 }
-
+ 
 @media (max-width: 575.98px) {
     .hero .row {
         padding-top: 112px;
         padding-bottom: 52px;
     }
-
+ 
     .hero-name {
         font-size: clamp(48px, 14vw, 76px);
         line-height: .98;
     }
-
+ 
     .hero-role {
         font-size: clamp(17px, 5vw, 22px);
     }
-
+ 
     .hero-buttons {
         align-items: stretch;
     }
-
+ 
     .hero-buttons > a {
         flex: 1 1 100%;
         width: 100%;
     }
-
+ 
     .hero-socials {
         gap: 12px;
     }
 }
-
+ 
 /* Avoid a sweeping decorative layer lingering over hero copy. */
 .hero-buttons a::after,
 .nav-contact::after,
 .contact-button::after {
     pointer-events: none;
 }
-
+ 
 @media (prefers-reduced-motion: reduce) {
     .hero-buttons a::after,
     .nav-contact::after,
@@ -6594,11 +6594,11 @@ body {
         display: none !important;
     }
 }
-
+ 
 /* ========================================================================
    FINAL PRESENTATION PASS — PORTRAIT MOTION + PROJECT GRID CONSISTENCY
    ======================================================================== */
-
+ 
 /* PORTRAIT: give the image a deliberate editorial frame and enough room. */
 .hero-visual {
     width: 100%;
@@ -6606,7 +6606,7 @@ body {
     margin-inline: auto;
     perspective: 1400px;
 }
-
+ 
 .hero-visual .portrait-frame {
     position: relative;
     width: 100%;
@@ -6627,7 +6627,7 @@ body {
         0 0 0 1px rgba(185,229,255,.08),
         0 0 60px rgba(158,188,255,.12);
 }
-
+ 
 .hero-visual .portrait-frame::after {
     content: "";
     position: absolute;
@@ -6640,7 +6640,7 @@ body {
         linear-gradient(0deg, rgba(7,10,18,.18), transparent 28%);
     opacity: .75;
 }
-
+ 
 .hero-visual .portrait-frame img,
 .hero-visual .portrait-frame .profile-image {
     display: block;
@@ -6655,17 +6655,17 @@ body {
     will-change: transform, filter;
     backface-visibility: hidden;
 }
-
+ 
 .hero-visual .portrait-frame::before {
     z-index: 3;
     pointer-events: none;
 }
-
+ 
 .hero-visual .floating-tech-card,
 .hero-visual .floating-caption {
     z-index: 5;
 }
-
+ 
 /* PROJECTS: one consistent full-width visual panel per card. */
 .projects-grid {
     display: grid !important;
@@ -6673,7 +6673,7 @@ body {
     align-items: stretch !important;
     gap: clamp(20px, 2.2vw, 32px) !important;
 }
-
+ 
 .projects-grid > .project-showcase {
     display: flex !important;
     flex-direction: column !important;
@@ -6687,7 +6687,7 @@ body {
     overflow: hidden !important;
     border-radius: 26px !important;
 }
-
+ 
 .projects-grid > .project-showcase > .project-visual {
     display: flex !important;
     flex: 0 0 auto !important;
@@ -6707,7 +6707,7 @@ body {
     box-sizing: border-box !important;
     overflow: hidden !important;
 }
-
+ 
 .projects-grid .project-visual-content {
     display: flex;
     flex-direction: column;
@@ -6719,18 +6719,18 @@ body {
     margin: 0 !important;
     text-align: left;
 }
-
+ 
 .projects-grid .project-index {
     margin: 0 0 22px !important;
     line-height: 1.4;
 }
-
+ 
 .projects-grid .project-main-icon {
     margin: 0 0 16px !important;
     font-size: 34px;
     line-height: 1;
 }
-
+ 
 .projects-grid .project-visual-content h3 {
     width: 100%;
     max-width: 100%;
@@ -6741,13 +6741,13 @@ body {
     overflow-wrap: anywhere;
     text-wrap: balance;
 }
-
+ 
 .projects-grid .project-visual-content > p {
     margin: 0 !important;
     font-size: 13px;
     line-height: 1.6;
 }
-
+ 
 .projects-grid .project-visual-tags {
     display: flex;
     flex-wrap: wrap;
@@ -6755,12 +6755,12 @@ body {
     width: 100%;
     margin-top: 22px !important;
 }
-
+ 
 .projects-grid .project-visual-tags span {
     white-space: normal;
     line-height: 1.35;
 }
-
+ 
 .projects-grid > .project-showcase > .project-details {
     display: flex !important;
     flex-direction: column !important;
@@ -6772,7 +6772,7 @@ body {
     padding: clamp(25px, 2.7vw, 36px) !important;
     box-sizing: border-box !important;
 }
-
+ 
 .projects-grid .project-details h3 {
     width: 100%;
     max-width: 100%;
@@ -6783,7 +6783,7 @@ body {
     text-wrap: balance;
     overflow-wrap: anywhere;
 }
-
+ 
 .projects-grid .project-details > p {
     width: 100%;
     max-width: 100%;
@@ -6791,12 +6791,12 @@ body {
     font-size: 13px;
     line-height: 1.8;
 }
-
+ 
 .projects-grid .project-category {
     line-height: 1.5;
     overflow-wrap: anywhere;
 }
-
+ 
 /* A little visual motion in the project artwork, without distorting layout. */
 .projects-grid .project-visual::before {
     content: "";
@@ -6813,56 +6813,56 @@ body {
     pointer-events: none;
     transition: transform 1s cubic-bezier(.16,1,.3,1), opacity .6s ease;
 }
-
+ 
 .projects-grid .project-showcase:hover .project-visual::before {
     transform: translate(-12px, 18px) scale(1.08);
     opacity: .9;
 }
-
+ 
 .projects-grid .project-visual-content {
     position: relative;
     z-index: 2;
 }
-
+ 
 @media (max-width: 900px) {
     .projects-grid {
         grid-template-columns: minmax(0, 1fr) !important;
     }
-
+ 
     .projects-grid > .project-showcase > .project-visual {
         height: clamp(270px, 52vw, 350px) !important;
     }
-
+ 
     .hero-visual {
         max-width: min(100%, 540px);
     }
 }
-
+ 
 @media (max-width: 575.98px) {
     .hero-visual .portrait-frame {
         aspect-ratio: 4 / 5;
         border-radius: 24px;
     }
-
+ 
     .hero-visual .portrait-frame img,
     .hero-visual .portrait-frame .profile-image {
         object-position: center 18%;
     }
-
+ 
     .projects-grid > .project-showcase > .project-visual {
         height: 280px !important;
         padding: 24px !important;
     }
-
+ 
     .projects-grid > .project-showcase > .project-details {
         padding: 24px !important;
     }
-
+ 
     .projects-grid .project-visual-content h3 {
         font-size: 27px !important;
     }
 }
-
+ 
 /* Avoid accidental horizontal overflow from legacy project layout rules. */
 .projects,
 .projects .container,
@@ -6871,19 +6871,19 @@ body {
     min-width: 0;
     max-width: 100%;
 }
-
+ 
 /* ========================================================================
    FINAL GLOBAL ALIGNMENT SYSTEM — CONSISTENT PAGE WIDTH & SECTION RHYTHM
    All primary sections share one centered content rail and spacing scale.
    ======================================================================== */
-
+ 
 :root {
     --page-content-width: 1240px;
     --page-gutter: clamp(22px, 5.2vw, 76px);
     --section-space-y: clamp(84px, 9vw, 132px);
     --section-space-y-mobile: 76px;
 }
-
+ 
 /* Prevent horizontal drift while allowing visual effects to bleed within sections. */
 html,
 body {
@@ -6891,11 +6891,11 @@ body {
     max-width: 100%;
     overflow-x: clip;
 }
-
+ 
 body {
     margin-inline: auto;
 }
-
+ 
 /* Every section uses the same content width and centered alignment. */
 section:not(.hero) > .container,
 .hero > .container {
@@ -6907,7 +6907,7 @@ section:not(.hero) > .container,
     margin-inline: auto !important;
     padding-inline: 0 !important;
 }
-
+ 
 /* Bootstrap container widths are normalized across all viewport breakpoints. */
 @media (min-width: 576px) {
     section:not(.hero) > .container,
@@ -6915,33 +6915,33 @@ section:not(.hero) > .container,
         max-width: var(--page-content-width) !important;
     }
 }
-
+ 
 @media (min-width: 768px) {
     section:not(.hero) > .container,
     .hero > .container {
         max-width: var(--page-content-width) !important;
     }
 }
-
+ 
 @media (min-width: 992px) {
     section:not(.hero) > .container,
     .hero > .container {
         max-width: var(--page-content-width) !important;
     }
 }
-
+ 
 @media (min-width: 1200px) {
     section:not(.hero) > .container,
     .hero > .container {
         max-width: var(--page-content-width) !important;
     }
 }
-
+ 
 /* Same vertical rhythm for every primary section. */
 section:not(.hero).section-padding {
     padding-block: var(--section-space-y) !important;
 }
-
+ 
 /* Keep section labels, headings and descriptions on the same visual rail. */
 section:not(.hero) .section-label,
 section:not(.hero) .section-heading,
@@ -6949,21 +6949,21 @@ section:not(.hero) .section-description {
     margin-left: 0;
     margin-right: 0;
 }
-
+ 
 section:not(.hero) .section-heading {
     max-width: 900px;
     font-size: clamp(40px, 5.2vw, 68px);
     line-height: 1.06;
     letter-spacing: -.052em;
 }
-
+ 
 section:not(.hero) .section-description {
     max-width: 690px;
     margin-top: 0;
     margin-bottom: clamp(32px, 4vw, 48px);
     line-height: 1.8;
 }
-
+ 
 /* Normalize grids so cards align to the same edges and never overflow. */
 .education-grid,
 .skills-grid,
@@ -6974,7 +6974,7 @@ section:not(.hero) .section-description {
     margin-inline: 0 !important;
     box-sizing: border-box;
 }
-
+ 
 .education-grid > *,
 .skills-grid > *,
 .projects-grid > *,
@@ -6983,66 +6983,66 @@ section:not(.hero) .section-description {
     max-width: 100%;
     box-sizing: border-box;
 }
-
+ 
 /* About and contact inner rows obey the same container edges. */
 section:not(.hero) > .container > .row {
     margin-inline: 0;
     --bs-gutter-x: clamp(18px, 2.5vw, 34px);
 }
-
+ 
 .about .row > [class*="col-"],
 .contact .row > [class*="col-"] {
     min-width: 0;
 }
-
+ 
 /* Hero shares the same outer rail, while keeping its two-column composition. */
 .hero {
     width: 100%;
     min-height: min(900px, 100svh);
     padding-block: clamp(118px, 12vw, 164px) clamp(68px, 8vw, 108px);
 }
-
+ 
 .hero > .container > .row {
     width: 100%;
     margin-inline: 0;
     align-items: center;
     --bs-gutter-x: clamp(26px, 4.4vw, 66px);
 }
-
+ 
 .hero-content {
     width: 100%;
     max-width: 680px;
     min-width: 0;
 }
-
+ 
 .hero-visual {
     width: 100%;
     max-width: 560px;
     margin-inline: auto;
 }
-
+ 
 /* Ensure project cards use identical widths and consistent internal spacing. */
 .projects-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     align-items: stretch;
 }
-
+ 
 .projects-grid > .project-showcase {
     min-width: 0;
     width: 100%;
     height: 100%;
 }
-
+ 
 .projects-grid > .project-showcase > .project-visual {
     width: 100%;
     min-width: 0;
 }
-
+ 
 .projects-grid > .project-showcase > .project-details {
     width: 100%;
     min-width: 0;
 }
-
+ 
 /* Prevent long labels, links or titles from pushing any card wider than its rail. */
 section h1,
 section h2,
@@ -7053,74 +7053,74 @@ section a,
 section span {
     overflow-wrap: anywhere;
 }
-
+ 
 @media (max-width: 991.98px) {
     :root {
         --page-gutter: 30px;
         --section-space-y: 88px;
     }
-
+ 
     .hero {
         min-height: auto;
     }
-
+ 
     .hero > .container > .row {
         row-gap: 42px;
     }
-
+ 
     .hero-content {
         max-width: 760px;
     }
-
+ 
     .hero-visual {
         max-width: 540px;
     }
 }
-
+ 
 @media (max-width: 767.98px) {
     :root {
         --page-gutter: 24px;
         --section-space-y: var(--section-space-y-mobile);
     }
-
+ 
     section:not(.hero).section-padding {
         padding-block: var(--section-space-y-mobile) !important;
     }
-
+ 
     section:not(.hero) .section-heading {
         font-size: clamp(36px, 8vw, 52px);
     }
-
+ 
     .projects-grid {
         grid-template-columns: minmax(0, 1fr) !important;
     }
 }
-
+ 
 @media (max-width: 480px) {
     :root {
         --page-gutter: 19px;
     }
-
+ 
     .hero {
         padding-top: 108px;
         padding-bottom: 58px;
     }
-
+ 
     .hero > .container > .row {
         --bs-gutter-x: 0;
     }
-
+ 
     section:not(.hero) .section-heading {
         font-size: clamp(34px, 9vw, 46px);
     }
 }
-
+ 
 /* VS Code compatibility: standard properties accompany WebKit fallbacks. */
-
+ 
 /* ========================================================================
    CLICKABLE SKILL TOPICS + LEARNING RESOURCE DIALOG
    ======================================================================== */
-
+ 
 .skill-tags .skill-topic {
     appearance: none;
     -webkit-appearance: none;
@@ -7147,13 +7147,13 @@ section span {
         transform .35s cubic-bezier(.16,1,.3,1),
         box-shadow .35s ease;
 }
-
+ 
 .skill-tags .skill-topic i {
     font-size: 10px;
     opacity: .58;
     transition: transform .3s ease, opacity .3s ease;
 }
-
+ 
 .skill-tags .skill-topic:hover {
     color: #fff;
     border-color: rgba(190,210,255,.48);
@@ -7161,17 +7161,17 @@ section span {
     box-shadow: 0 8px 24px rgba(120,150,255,.12);
     transform: translateY(-2px);
 }
-
+ 
 .skill-tags .skill-topic:hover i {
     opacity: 1;
     transform: translate(2px,-2px);
 }
-
+ 
 .skill-tags .skill-topic:focus-visible {
     outline: 2px solid #b9e5ff;
     outline-offset: 3px;
 }
-
+ 
 /* Resource dialog */
 .learning-dialog {
     position: fixed;
@@ -7187,12 +7187,12 @@ section span {
     visibility: hidden;
     transition: opacity .28s ease, visibility .28s ease;
 }
-
+ 
 .learning-dialog.is-open {
     opacity: 1;
     visibility: visible;
 }
-
+ 
 .learning-dialog-panel {
     position: relative;
     width: min(100%, 490px);
@@ -7206,11 +7206,11 @@ section span {
     transform: translateY(18px) scale(.97);
     transition: transform .4s cubic-bezier(.16,1,.3,1);
 }
-
+ 
 .learning-dialog.is-open .learning-dialog-panel {
     transform: translateY(0) scale(1);
 }
-
+ 
 .learning-dialog-kicker {
     margin: 0 0 10px;
     color: #b9e5ff;
@@ -7219,7 +7219,7 @@ section span {
     letter-spacing: .17em;
     text-transform: uppercase;
 }
-
+ 
 .learning-dialog-title {
     margin: 0 40px 10px 0;
     color: #fff;
@@ -7227,19 +7227,19 @@ section span {
     font-weight: 650;
     letter-spacing: -.04em;
 }
-
+ 
 .learning-dialog-copy {
     margin: 0 0 24px;
     color: #aebbd2;
     font-size: 13px;
     line-height: 1.7;
 }
-
+ 
 .learning-dialog-links {
     display: grid;
     gap: 10px;
 }
-
+ 
 .learning-resource-link {
     display: flex;
     align-items: center;
@@ -7254,27 +7254,27 @@ section span {
     text-decoration: none;
     transition: transform .3s ease, border-color .3s ease, background .3s ease;
 }
-
+ 
 .learning-resource-link:hover {
     color: #fff;
     border-color: rgba(185,229,255,.4);
     background: rgba(185,229,255,.09);
     transform: translateX(3px);
 }
-
+ 
 .learning-resource-link small {
     display: block;
     margin-top: 3px;
     color: #9eabc4;
     font-size: 10px;
 }
-
+ 
 .learning-resource-link i {
     flex: 0 0 auto;
     color: #c9b8ff;
     font-size: 17px;
 }
-
+ 
 .learning-dialog-close {
     position: absolute;
     top: 18px;
@@ -7289,21 +7289,21 @@ section span {
     background: rgba(255,255,255,.06);
     cursor: pointer;
 }
-
+ 
 .learning-dialog-close:hover {
     background: rgba(255,255,255,.12);
 }
-
+ 
 @media (max-width: 480px) {
     .learning-dialog {
         padding: 14px;
     }
-
+ 
     .learning-dialog-panel {
         border-radius: 21px;
     }
 }
-
+ 
 @media (prefers-reduced-motion: reduce) {
     .skill-tags .skill-topic,
     .learning-dialog,
@@ -7312,14 +7312,14 @@ section span {
         transition: none !important;
     }
 }
-
+ 
 /* ========================================================================
    PROJECT TECHNOLOGY CHIP FIX
    The learning-resource buttons inside .project-tech were missing the
    .skill-tags parent selector, so the browser displayed default grey buttons.
    This gives project chips the same premium style as the skill-topic pills.
    ======================================================================== */
-
+ 
 .project-tech {
     display: flex;
     flex-wrap: wrap;
@@ -7329,7 +7329,7 @@ section span {
     min-width: 0;
     margin-top: 28px;
 }
-
+ 
 .project-tech .skill-topic,
 .project-tech button.skill-topic {
     appearance: none;
@@ -7372,7 +7372,7 @@ section span {
         box-shadow .4s ease,
         transform .4s cubic-bezier(.16, 1, .3, 1);
 }
-
+ 
 .project-tech .skill-topic i {
     display: inline-block;
     flex: 0 0 auto;
@@ -7382,7 +7382,7 @@ section span {
     opacity: .72;
     transition: transform .3s ease, opacity .3s ease;
 }
-
+ 
 .project-tech .skill-topic:hover {
     color: #fff;
     border-color: rgba(185, 229, 255, .48);
@@ -7394,12 +7394,12 @@ section span {
         0 9px 26px rgba(120, 150, 255, .14);
     transform: translateY(-2px);
 }
-
+ 
 .project-tech .skill-topic:hover i {
     opacity: 1;
     transform: translate(2px, -2px);
 }
-
+ 
 .project-tech .skill-topic:focus,
 .project-tech .skill-topic:focus-visible {
     outline: none;
@@ -7408,25 +7408,659 @@ section span {
         0 0 0 3px rgba(185, 229, 255, .13),
         0 0 0 1px rgba(185, 229, 255, .35);
 }
-
+ 
 .project-tech .skill-topic:active {
     transform: scale(.97);
 }
-
+ 
 @media (max-width: 575.98px) {
     .project-tech {
         gap: 8px;
     }
-
+ 
     .project-tech .skill-topic {
         padding: 8px 11px;
         font-size: 10px;
     }
 }
-
+ 
 @media (prefers-reduced-motion: reduce) {
     .project-tech .skill-topic,
     .project-tech .skill-topic i {
         transition: none !important;
+    }
+}
+ 
+/* ==========================================================================
+   VAISHNAVI PORTFOLIO — FINAL RESPONSIVE REFINEMENT
+   One consistent layout system for desktop, laptop, tablet and mobile.
+   This block intentionally comes last to override legacy duplicate rules.
+   ========================================================================== */
+ 
+:root {
+    --vf-content: 1220px;
+    --vf-gutter: clamp(20px, 5vw, 76px);
+    --vf-section-space: clamp(82px, 8vw, 124px);
+    --vf-section-space-mobile: 58px;
+}
+ 
+html {
+    scroll-behavior: auto;
+    scroll-padding-top: 110px;
+}
+ 
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+}
+ 
+/* Consistent page rail */
+.site-nav .container-fluid,
+section > .container,
+.site-footer > .container {
+    width: min(var(--vf-content), calc(100% - (var(--vf-gutter) * 2)));
+    max-width: var(--vf-content);
+    padding-inline: 0;
+    margin-inline: auto;
+}
+ 
+section:not(.hero).section-padding {
+    padding-block: var(--vf-section-space);
+}
+ 
+section:not(.hero) .section-label {
+    margin: 0 0 24px;
+    line-height: 1.3;
+}
+ 
+section:not(.hero) .section-heading {
+    margin: 0 0 18px;
+    line-height: 1.08;
+    text-wrap: balance;
+}
+ 
+section:not(.hero) .section-description {
+    max-width: 720px;
+    margin: 0 0 34px;
+    line-height: 1.8;
+}
+ 
+/* HERO: no viewport-height row, no stacked padding, portrait directly under title */
+.hero {
+    display: block;
+    min-height: 0 !important;
+    height: auto !important;
+    padding: clamp(132px, 14vh, 176px) 0 clamp(64px, 8vw, 100px) !important;
+    overflow: hidden;
+}
+ 
+.hero > .container {
+    width: min(1040px, calc(100% - (var(--vf-gutter) * 2)));
+    max-width: 1040px;
+}
+ 
+.hero > .container > .row,
+.hero .row,
+.hero-mobile-row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start !important;
+    min-height: 0 !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    --bs-gutter-x: 0 !important;
+}
+ 
+.hero .row > [class*="col-"] {
+    flex: 0 0 100%;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    padding-inline: 0;
+}
+ 
+.hero-content {
+    width: 100%;
+    max-width: 920px;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    text-align: center;
+    transform: none !important;
+}
+ 
+.hero-intro {
+    margin: 0 0 10px;
+}
+ 
+.hero-name {
+    margin: 0;
+    font-size: clamp(64px, 9vw, 116px);
+    line-height: .91;
+    letter-spacing: -.075em;
+    text-wrap: balance;
+}
+ 
+.hero-role {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 22px 0 0;
+    font-size: clamp(18px, 2vw, 25px);
+    line-height: 1.35;
+    letter-spacing: -.025em;
+}
+ 
+/* Portrait sits immediately below the role on every screen size */
+.hero-visual {
+    position: relative;
+    width: min(100%, 390px);
+    max-width: 390px;
+    margin: 34px auto 0 !important;
+    perspective: 1200px;
+}
+ 
+.hero-visual .portrait-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: hidden;
+    border-radius: 30px;
+}
+ 
+.hero-visual .portrait-frame img,
+.hero-visual .portrait-frame .profile-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    object-position: center 25%;
+}
+ 
+.hero-visual .floating-caption {
+    display: none !important;
+}
+ 
+.hero-visual .portrait-role-chip {
+    position: relative !important;
+    inset: auto !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: max-content;
+    max-width: 100%;
+    margin: 14px auto 0 !important;
+    padding: 11px 20px;
+    border: 1px solid rgba(190, 210, 255, .22);
+    border-radius: 999px;
+    background: linear-gradient(135deg, rgba(255,255,255,.10), rgba(255,255,255,.035));
+    box-shadow: 0 12px 35px rgba(0,0,0,.22), inset 0 1px 0 rgba(255,255,255,.12);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    text-align: center;
+}
+ 
+.hero-visual .portrait-role-chip span {
+    display: none !important;
+}
+ 
+.hero-visual .portrait-role-chip strong {
+    color: #edf2ff;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .015em;
+}
+ 
+.hero-description {
+    width: min(100%, 760px);
+    max-width: 760px;
+    margin: 30px auto 0 !important;
+    line-height: 1.85;
+    text-align: center;
+}
+ 
+.hero-buttons {
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto 0 !important;
+    gap: 12px;
+}
+ 
+.hero-socials {
+    justify-content: center;
+    margin: 24px auto 0 !important;
+}
+ 
+.hero-location {
+    justify-content: center;
+    margin: 12px auto 0;
+    text-align: center;
+}
+ 
+/* Section grids share consistent gaps and avoid overflow */
+.education-grid,
+.skills-grid,
+.projects-grid,
+.certifications-grid,
+.certificate-grid {
+    align-items: stretch;
+}
+ 
+.education-grid > *,
+.skills-grid > *,
+.projects-grid > *,
+.certifications-grid > *,
+.certificate-grid > * {
+    min-width: 0;
+    max-width: 100%;
+}
+ 
+.education-card,
+.door,
+.project-showcase,
+.certificate,
+.timeline-content {
+    min-width: 0;
+    height: auto;
+}
+ 
+.project-showcase {
+    overflow: hidden;
+}
+ 
+.project-details,
+.project-visual,
+.education-card,
+.door,
+.certificate {
+    max-width: 100%;
+}
+ 
+img,
+svg,
+video,
+canvas {
+    max-width: 100%;
+}
+ 
+/* Laptop and desktop refinements */
+@media (min-width: 992px) {
+    .hero {
+        padding-top: clamp(142px, 15vh, 190px) !important;
+    }
+ 
+    .hero-visual {
+        width: min(34vw, 390px);
+    }
+ 
+    .hero-description {
+        font-size: 16px;
+    }
+ 
+    .hero-buttons > a {
+        flex: 0 0 auto;
+    }
+ 
+    .education-grid,
+    .skills-grid,
+    .certifications-grid,
+    .certificate-grid {
+        gap: 22px;
+    }
+}
+ 
+/* Tablet */
+@media (max-width: 991.98px) {
+    :root {
+        --vf-gutter: 30px;
+        --vf-section-space: 76px;
+    }
+ 
+    .hero {
+        padding-top: 124px !important;
+        padding-bottom: 58px !important;
+    }
+ 
+    .hero-name {
+        font-size: clamp(58px, 10vw, 88px);
+    }
+ 
+    .hero-visual {
+        width: min(62vw, 360px);
+    }
+}
+ 
+/* Mobile */
+@media (max-width: 767.98px) {
+    :root {
+        --vf-gutter: 22px;
+        --vf-section-space: var(--vf-section-space-mobile);
+    }
+ 
+    .site-nav {
+        top: 12px !important;
+        width: calc(100% - 28px) !important;
+        max-width: none !important;
+        margin-inline: auto !important;
+    }
+ 
+    .site-nav .container-fluid {
+        width: 100%;
+        max-width: none;
+        padding-inline: 0;
+    }
+ 
+    .hero {
+        min-height: 0 !important;
+        height: auto !important;
+        padding: 108px 0 46px !important;
+    }
+ 
+    .hero > .container {
+        width: calc(100% - (var(--vf-gutter) * 2));
+    }
+ 
+    .hero > .container > .row,
+    .hero .row,
+    .hero-mobile-row {
+        min-height: 0 !important;
+        height: auto !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        row-gap: 0 !important;
+    }
+ 
+    .hero-content {
+        padding: 0 !important;
+        margin: 0 auto !important;
+        text-align: center;
+    }
+ 
+    .hero-intro {
+        margin-bottom: 8px;
+        font-size: 18px;
+    }
+ 
+    .hero-name {
+        font-size: clamp(48px, 13vw, 76px) !important;
+        line-height: .94 !important;
+        letter-spacing: -.07em !important;
+    }
+ 
+    .hero-role {
+        margin-top: 16px !important;
+        font-size: clamp(16px, 4.3vw, 20px);
+    }
+ 
+    .hero-visual {
+        width: min(76vw, 330px);
+        margin: 25px auto 0 !important;
+    }
+ 
+    .hero-visual .portrait-frame {
+        border-radius: 25px;
+    }
+ 
+    .hero-visual .portrait-role-chip {
+        margin-top: 12px !important;
+        padding: 10px 18px;
+    }
+ 
+    .hero-description {
+        margin-top: 25px !important;
+        font-size: 14px;
+        line-height: 1.8;
+    }
+ 
+    .hero-buttons {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 24px !important;
+        gap: 10px;
+    }
+ 
+    .hero-buttons > a {
+        flex: 0 1 auto;
+        width: auto;
+        min-height: 46px;
+    }
+ 
+    .hero-socials {
+        margin-top: 20px !important;
+    }
+ 
+    .hero-location {
+        margin-top: 12px;
+        font-size: 13px;
+    }
+ 
+    section:not(.hero).section-padding {
+        padding-block: var(--vf-section-space) !important;
+    }
+ 
+    section:not(.hero) .section-label {
+        margin-bottom: 18px;
+    }
+ 
+    section:not(.hero) .section-heading {
+        font-size: clamp(34px, 8.5vw, 50px);
+        line-height: 1.08;
+        margin-bottom: 15px;
+    }
+ 
+    section:not(.hero) .section-description {
+        margin-bottom: 26px;
+        font-size: 14px;
+    }
+ 
+    .education-grid,
+    .skills-grid,
+    .projects-grid,
+    .certifications-grid,
+    .certificate-grid {
+        gap: 16px !important;
+        margin-top: 24px;
+    }
+ 
+    .education-card,
+    .door,
+    .certificate {
+        min-height: 0 !important;
+    }
+ 
+    .project-showcase {
+        margin: 0 !important;
+    }
+ 
+    .timeline {
+        margin-top: 24px;
+    }
+ 
+    .contact h2 {
+        font-size: clamp(42px, 10vw, 62px) !important;
+        line-height: 1.06;
+        letter-spacing: -.055em !important;
+    }
+ 
+    .footer-bottom {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 20px;
+    }
+}
+ 
+/* Small phones */
+@media (max-width: 420px) {
+    :root {
+        --vf-gutter: 18px;
+        --vf-section-space: 48px;
+    }
+ 
+    .site-nav {
+        top: 9px !important;
+        width: calc(100% - 20px) !important;
+    }
+ 
+    .hero {
+        padding-top: 96px !important;
+        padding-bottom: 38px !important;
+    }
+ 
+    .hero-name {
+        font-size: clamp(44px, 12.5vw, 58px) !important;
+    }
+ 
+    .hero-visual {
+        width: min(78vw, 300px);
+        margin-top: 22px !important;
+    }
+ 
+    .hero-description {
+        margin-top: 21px !important;
+        font-size: 13px;
+    }
+ 
+    .hero-buttons > a {
+        flex: 1 1 100%;
+        width: 100%;
+    }
+ 
+    section:not(.hero).section-padding {
+        padding-block: var(--vf-section-space) !important;
+    }
+}
+ 
+/* Reduced-motion support */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
+ 
+/* MOBILE HERO TOP GAP — FINAL OVERRIDE
+   Fixed navigation is approximately 76px high with a 9px top offset.
+   Start hero content just below it instead of adding another 96–108px. */
+@media (max-width: 767.98px) {
+    .hero {
+        padding-top: 88px !important;
+        margin-top: 0 !important;
+    }
+ 
+    .hero > .container,
+    .hero > .container > .row,
+    .hero .row,
+    .hero-mobile-row,
+    .hero-content {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+ 
+    .hero-intro {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+}
+ 
+@media (max-width: 420px) {
+    .hero {
+        padding-top: 88px !important;
+    }
+}
+ 
+/* FINAL HERO ACTION CARDS — restore all small actions under portrait */
+.hero-visual {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    margin-inline: auto !important;
+}
+.hero-visual .portrait-role-chip {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    align-self: center !important;
+    width: max-content !important;
+    min-width: 150px;
+    margin: 14px auto 0 !important;
+    text-align: center !important;
+}
+.hero-visual .portrait-role-chip strong {
+    display: block;
+    width: 100%;
+    text-align: center !important;
+}
+.hero-buttons {
+    display: flex !important;
+    flex-flow: row wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 10px 12px !important;
+    width: 100%;
+    margin: 28px auto 0 !important;
+}
+.hero-buttons > a {
+    display: inline-flex !important;
+    flex: 0 1 auto !important;
+    width: auto !important;
+    min-height: 42px;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+}
+.hero-socials {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 12px !important;
+    margin: 18px auto 0 !important;
+}
+.hero-location {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 8px !important;
+    margin: 10px auto 0 !important;
+    text-align: center !important;
+}
+@media (max-width: 767.98px) {
+    .hero {
+        padding-bottom: 54px !important;
+    }
+    .hero-buttons {
+        margin-top: 24px !important;
+        gap: 9px !important;
+    }
+    .hero-buttons > a {
+        min-height: 40px;
+        padding: 10px 13px;
+        font-size: 12px;
+    }
+    .hero-socials {
+        margin-top: 16px !important;
+    }
+    .hero-location {
+        margin-top: 9px !important;
+        font-size: 12px;
+    }
+}
+@media (max-width: 380px) {
+    .hero-buttons {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        width: min(100%, 290px);
+    }
+    .hero-buttons > a {
+        width: 100% !important;
     }
 }
